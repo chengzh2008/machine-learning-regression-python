@@ -1,0 +1,204 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 1: Simple Linear Regression Assignment\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Predicting House Prices (One feature)\
+In this notebook we will use data on house sales in King County, where Seattle is located, to predict house prices using simple (one feature) linear regression. You will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use SArray and SFrame functions to compute important summary statistics\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a function to compute the Simple Linear Regression weights using the closed form solution\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a function to make predictions of the output given the input feature\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Turn the regression around to predict the input/feature given the output\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compare two different models for predicting house prices\cb1 \
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided below to you for this assignment. This notebook contains the instructions, quiz questions and partially-completed code for you to use as well as some cells to test your code.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/A3Ropsdq-qykB9OK9faDsXPuKqzLnQHa6a7h6_aIFRpPoSwINfGF4VP2akcKup6CbODBlJjDY_o2NfYemSbBuw.aRbDSsg9eUin9FoaKtQqmQ.FxRuDZLy2li1DlVRd7QKCKv73vMq_QUoxHD7jguHrwBozIYU1VhtW-r3vQQ655efzPb__tQsbvgayx0Rbb9HzDipUhbPMKAhWkj-IFQukExWtwv8HI3qX5dOkeIHozEG8LrAg4cjMFyhvuF8xqMxJSSyd0895mIpAmGvuLmLpmx_7krfB2lpJoPANe5HC1OfDOGCNL-LAk9hOnMBCLeOMAcf3Vm9KZsCQI5_0H81yZoj73GlpGrI2_hC_ia_ecvKAlS_-DGb5EK2kg3Hed8VIIkMAzgDxiKUFciXKkrIJZg11xD0Z5itHh8d6kpi29x5exXTlc_WI-dhiMCTsg-Z59vl5syKze-DeJmNubJUhXyq0YO4KiVb2x7eTI0uwGMGFEUVZhmeaFiU7RbsB8FZGRsEARcVr24zySKXDjWIMzokOg7fZi6j2YAFeDDyj-37"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/-W2648zfAW9QAqqRFM4m3FLDQXyd6IsYNWILo026KnkLYGgaBz8vZWP_wEwcbHIGrZQwATu5c3gyql0Kta9Ouw.Yp0DxX4yy5aMRgD7pXP-Aw.L-9C6MIxF8okeLMuXEx0xW0GXPBQQ2qWFpO4uk9qHlVEwg_wJFZDxuZ72wAcCdi8dkoORaPesYQeznWMD_Jn--j6bpwWiGUX9My8EIsZ7I01EfyVf3Cjfez18KIHwk1bhno6fqm6SG78ReQekswZWvHfm4-eRJ0GmdiyOYRVc-5tb75g99_2PdoGS4XNxquE4WF74SNVl2cAJiOLvpKmJZrZUwxEX09EPI2E9elv2V2R3joh10E4E7t4AeaOfsOMVaMHnh-2-_jS1IMTzUS7Ve9L8WuqDLtpkT5o7GsUOuhC4G9GyDkF6Bw7oFq9_fRYqKZdP8yyzKYZj77uB38ugQ_lC88EAecr6XT8Jl8oqmOROsnAy2yhIb0k2WvvT-Ia0-YxdxumSqHH2eU3tr4ecT6uDd0umd2PzMilsgWJHZz6ojYNSK7T6cUV_Izn77Wgeb2La1ZsOoN8chFpt-N-s3hzX71_8BPW3nxwMb-WI_D2C2hGwdx2SjlLsv0AYt40"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-1-simple-regression-quiz-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ITpRfnpl5iTWMipWBkDAQXAh9npsVIvMc7RW2xwOrrBR9VyiOj5gWxl6yrNANMgkYoJHljHDvaCjEcqwceJFGQ.g_sq6tKtzgnjGgxM7yrozQ.9ndZIbkdza090Xh3guYzFkWmZefUQjWKJc5vJWjv5Y88CSgumm0Pwz-jX8dK1Zr3E_joJwfQ4dDVXbMVI5UmCZCQnNQ-YrtrN6oOMXngtRM8583VODRn3fH8uhH3TXM24L_rROlDz-DioDFJ8wtXrtvFHzLbJCQ0v_He2gwXXBrzOzwcKSiGIR3J6TQzvLAY19C7amGnmf7Z-Q1nxvGuAilCJEDPEvgCxfonTyCHQY2izJwjVJyknk5zOvJ2cK7tCCiU3Y5i8-0c06aN0ll-B32qHf6bnvqD4r3iDDBIY2hmDtQjpEPVjrrrA2ldsDBZLQw7-QqkQorRK0PAvp5b-XOLJpOMObSeTVGj0FPz3nVnQ1rbeCNbLzHOSO1xTi0KnDpPh5G5bvkA5njdargyocpYpm89uL4GUoNVKZmlGkkaBGvCmuj4-sZyI6CpMjji"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/oLN91b-YOrptlkg8T6-rnMhvfXXZwLNs2Xmms7EI2JfPoYsqxKCluZG3TxmzAYlTdPLdbrHWMCGjXIA5r8e1Yg.mip4Eu2BKuMx53AOb-cchg.bajIi6mAODZEbtDbn5i5UUlZ0urz142AZJOm5fGWwUWEzSlue5lohW_ec-pyk_IaoASqLIcy2mJjAyk6M6RS8jz-f0VRX_UtWdhMfQLcCZv0SW131j5vKoIUKK3PsUEXtdatHgkpCqMceDAFhCMlnT7lbVJ2CNz40oavOpvZndxd4dRuo4UcPlz7-59KXSYuxbhZxEFf-hgeUo06VqYw0okO-lnDZovzxHGDot5pyuVrpjToUZQSOanteHbPx0ql_Vppdn7lsck7mc0rmFvJ1qbmN4657w8Sz9Y_FwfZenPEP2-x5k-Xhs610jYRcMXoi8yA-wTr9U_v8nqzGlYllc6xYtOiBv09jPdy2NcbB_zHtDs6JA_9-HwpsePjMd_Zi9zHDRHyCeN8DUZBm5YiN7odYi0DcuF8YrZBKDUzAev2HA1pIHt3jSjfxcga9Z90DrATaxqLn8DORsxYtcu35g"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_train_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/vX4pzy7XAWOXu-CCvzDguJbCb0J5lzSxw2waJ0OlZS8_PRuGqc2Eg3xe8M4wyxrhPoja9UPr7nR9WFVouoRzWA.V_LH1sPNRiRkbMQ09N9Wsw.kf28CrUExgp-AA_Bpz0ZidVXyQclNd611ZwZx7XRPlJw_8NUv0IRFX8JvxDV6_miP8YiE5hao6euYV0rZOcnEIEM_sUQVx5FErH3tshMlp0gOxUafQi2InrpsxO5QfSlRBaOfodvX7eDVEwrG0206YJVw_y5A1Xx8sOxqVf4yFN7PgfCzfXrIrcNF--MXfL5mQDCQJL0BFESUxRj1z8V4Dpe6jeDqVtVQaKIOex1IxI0a5CNN8GTdFn-_ZERN1GyVFk4b0LVHZ18WHQ9McetjbZQNrkEf_qcFIiY8oN_q4fNYUkV0UU19JFaXptyr1d9C7hlWhW2L9QEmT4M2Sw3lhJBJ9pDGEUFG5hfvA9ZFchD3e-NWTSb4mVZRvwwA-HAVuiTfVNzG7ibjK5E0Izpe0eeBw1Ar72-g7sUn06oSr6rQ-mTl7lLVkzh-5Ytbhia"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_test_data.csv}}\cb1 \
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome, however, to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using SFrame, import graphlab and load in the house data, otherwise you can also download the csv. (Note that we will be using the training and testing csv files provided). e.g in python with SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data.gl/')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Split data into 80% training and 20% test data. Using SFrame, use this command to set the same seed for everyone. e.g. in python with SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_data,test_data = sales.random_split(.8,seed=0)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 For those students not using graphlab please download the training and testing data csv files.\
+From now on we will train the models using train_data. It will be important that we use the same split here to ensure the results are the same.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Write a generic function that accepts a column of data (e.g, an SArray) \'91input_feature\'92 and another column \'91output\'92 and returns the Simple Linear Regression parameters \'91intercept\'92 and \'91slope\'92. Use the closed form solution from lecture to calculate the slope and intercept. e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def simple_linear_regression(input_feature, output):\
+    [your code here]\
+return(intercept, slope)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Use your function to calculate the estimated slope and intercept on the training data to predict \'91price\'92 given \'91sqft_living\'92. e.g. in python with SFrames using:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 input_feature = train_data[\'91sqft_living\'92]\
+output = train_data[\'91price\'92]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 save the value of the slope and intercept for later (you might want to call them e.g. squarfeet_slope, and squarefeet_intercept)\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 5. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Write a function that accepts a column of data \'91input_feature\'92, the \'91slope\'92, and the \'91intercept\'92 you learned, and returns an a column of predictions \'91predicted_output\'92 for each entry in the input column. e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def get_regression_predictions(input_feature, intercept, slope)\
+    [your code here]\
+return(predicted_output)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6. Quiz Question: Using your Slope and Intercept from (4), What is the predicted price for a house with 2650 sqft?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 7. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Write a function that accepts column of data: \'91input_feature\'92, and \'91output\'92 and the regression parameters \'91slope\'92 and \'91intercept\'92 and outputs the Residual Sum of Squares (RSS). e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def get_residual_sum_of_squares(input_feature, output, intercept,slope):\
+    [your code here]\
+return(RSS)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Recall that the RSS is the sum of the squares of the prediction errors (difference between output and prediction).\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 8. Quiz Question: According to this function and the slope and intercept from (4) What is the RSS for the simple linear regression using squarefeet to predict prices on TRAINING data?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+9. Note that although we estimated the regression slope and intercept in order to predict the output from the input, since this is a simple linear relationship with only two variables we can invert the linear function to estimate the input given the output!\
+Write a function that accept a column of data:\'91output\'92 and the regression parameters \'91slope\'92 and \'91intercept\'92 and outputs the column of data: \'91estimated_input\'92. Do this by solving the linear function output = intercept + slope*input for the \'91input\'92 variable (i.e. \'91input\'92 should be on one side of the equals sign by itself). e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def inverse_regression_predictions(output, intercept, slope):\
+    [your code here]\
+return(estimated_input)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 10. Quiz Question: According to this function and the regression slope and intercept from (3) what is the estimated square-feet for a house costing $800,000?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+11. Instead of using \'91sqft_living\'92 to estimate prices we could use \'91bedrooms\'92 (a count of the number of bedrooms in the house) to estimate prices. Using your function from (3) calculate the Simple Linear Regression slope and intercept for estimating price based on bedrooms. Save this slope and intercept for later (you might want to call them e.g. bedroom_slope, bedroom_intercept).\
+12. Now that we have 2 different models compute the RSS from BOTH models on TEST data.\
+\pard\pardeftab720\sl420
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13. Quiz Question: Which model (square feet or bedrooms) has lowest RSS on TEST data? Think about why this might be the case.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
