@@ -1,0 +1,235 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 2: Multiple Linear Regression Assignment 1\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Predicting House Prices (Multiple Variables)\
+In this notebook you will use data on house sales in King County to predict prices using multiple regression. The first assignment will be about exploring multiple regression in particular exploring the impact of adding features to a regression and measuring error. In the second assignment you will implement a gradient descent algorithm. In this assignment you will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use SFrames to do some feature engineering\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use built-in GraphLab Create (or otherwise) functions to compute the regression weights (coefficients)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Given the regression weights, predictors and outcome write a function to compute the Residual Sum of Squares\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Look at coefficients and interpret their meanings\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Evaluate multiple models via RSS\cb1 \
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided below to you for this assignment. This notebook contains the instructions, quiz questions and partially-completed code for you to use as well as some cells to test your code.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/eotkJTXNjK7MeIf-sAVfMs3Z_BwcQnddT5mTWEx-mUlyFgAX7U6K5Y0WSKC6t-sDz3Dy7xpfQ24rx__5jqb1MA.HU7OukOO8l7E9gv6UbVEyw.kCdoH76e3Ba7JAIi98yqawoySNsq7nT9Pe-IoU3ai4Ea33-UQFTNwO3EBxhAqVBP_fy2Ie8tVhoh9O7IbAC33XbxdpPIJpGAi7VvRQAnGsWDse4LE4mAVz0l1ajgJcAU3WhlzpkgrKaSxGiWmhgTRB-yRMP7D6VPvUjDjVCpmSrBT_U2ZKE2r6xO3kBKaet9uD_zWj6ehTHpREz2Q0MzTyoiOWxGCEUbCHlMypRERVIvf82gO8AXofhB4b9GviCvjF-ixd7yZLpMmGJt28_vYnjzzy0of4S-JelAAgcKkOTZuvSLkTMj5F8K_iLYUWEz5QLrhnUFNcVFT_ca3JoiiSlK3a2NqWssr5jxN0AioYpQK6EkL1iWlvPa_SoIY7p_t4zfx6BIg91kn8f6N9F292arT3o1eALsrOpKki6W2lNN5PW7ORQerKbUTeKdV0nU"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/zuS5vE2DkSqORF1UoAEm8o7zuZVdinSPfZD3LBlNHjV0PushtblEw0oj-z0wjIYnfHr-ljV1TrOzmx8hySpU6Q.l-a3bMT7ntID1Sy8FgvyOg.Ham9eRWKOHvgTONWSRTzYlAfSy1oapfAf6UiOmsHzaT0oyHOR4Lhu-uwyG-eyqBwf3_g3qDWFpVHfrIQcGEAk_C1XD5W7-CAgSuxy8w6FPkrTha60VCQUKL4UpvgrItJ17GrGsj-Vc5TnEvzdAbw3jJHgZdF0yRh2PUISrBJi7u1yoTqB-KnrUnAWI_cXFpTDQImdhD9G6y9PK2ixT0vZTn44od_ArDe0igssckutazfOJpvkKyr87-JpCW3pcIoPBRFBct4S8jGhXDTbV9s7WW-MqP_LxvdWsjYGpGcv7Sq-WP1RTirUalrEKYa22zM7jNhIYNXQSmMW5U_ln3aOBOHwc8908DKYXMCzX6aLarRpwK7K-YlH6JGZlNYS0Xf7SbAPJwMEvHp-qHQ56yBbav7Hpw-N7xTuli1iY1CvlRjIvyKBN9hhLvXp9lhLCTQilZjUXpb-rfwzhYXaL2VJogSlK4mhC2wAZDKDy_qvzvGoDaYi_20RMThBDO1jFwU9Pd5LkzLzHw25HcJRL-Jbw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-2-multiple-regression-assignment-1-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/-XPRueEZTN5Xc17PtfwmzJLms3gVWNYp2ehbMgIs7x1BAk7Nau3RZbLkjxEXwPITMpXVgQWB9DSsH51zATgs0w.7ybqm73u4NLGssruY4eGMw.1GAwQSDGbImyc3RdcdQ2KiQqW6xjrVBgJI17Z78qbiIUpzfdqkbaicuQ0U2IqCHbu0vSY_Aqe9aVkNZj5liOBbxFJ_fbIXg2PIN4hSw70_v1_wZyelRnwUGGEmsO9kSutsgGvIeVUuLgU2CrK_xoFciDVazaBXpVJOpKL8kvU1Y9oyK_2hneCxG1IcgbHNltXa4mDi9c_oM7mfwvjbHn9LQfU9MFMDqXIs8Dtkl-m3EG044UD8ZDPB3kTkymkf29Ynu_tpanEFTuCOYOFQBev2w8RsScGfMAaRy3o8yKs6IZoW80AAeqnvYEULKKLRo18c2RjgyW460NaGkwS66HU3T4PUbPcGvOVwXUNvKW3_IwcSgMzYO8cUuotG7ByY8wKId_EiX9ZJlWmZw4PKjdjddo0mvPplLs4ZcnOpydGb5nwaonYUIStelAoj948vic"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/aebWCBVyF-h9plD2CSJT0A6npJfgw11lr3Gk8Q43tXBU4oySI6Fa-xMMSFMxgU7d66yPQ1KPM2wzLAYIN07V7g.l3iXR5jOGhpQwACQ3ARyXA.qVsWKCGYEurECOunNlaqIkxoc_NN30NlUInn0zmb96m0SiCiMLZs1j7dsmzLDF0wOc_aM_7iDKNU9uichwDZo6symyDk9puJE7bNlUHDf3F7oVh6od_-N4c3jVjLtdj_NRVTjTGVdi_7e5ZVd9HDn0zA1nzJY5pS_UR7ICYApcuKH-89H4ilm5Wnl9RXeGBzQtRfhJzWF8ZA-0Y9N247DjmRVgcAhUSY9TmCbJFPM_-ULFivWpE5rXReh3lMS_gDBs__FuDSUBr-48ITT83YJdaI-ebTPLAasXedaoOTF06fSQFWCsRMWR64oxl_DIjOcgstZj7Xe2NXad475jZe5LUHyNjT1jd2tCPwB_FUFmPDBqiaW9HIvuuc133A5DGovNOe5IOFVntvCESNfqWIRnp_buWAVVV8IiLPN71oV0nRiJGvuae0f2iPP7AqaFGSkfDRLlYss4PuOICp326isA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_train_data.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/i3TKnNfUYj8LuOKTMbkU77MK1ekAC9twK6OwUwM5uLf2oXE4QxHKIMmeEmlx-36BPhykhyK5RYYfSbcQYtZzIQ.dSdtfpyJFBPml-cfwyGtgw.nFFogh4DF9XwuvNsVg17g8VN8jskLvSuQf-5S9Tz6cchTWLQRkCo5teZ9UBtVRE6hAcGHJACNNCfutuxm9oR0eKZ4DoEKmI98Xx4wU2QjjTbE5z6-QInGg005y1WYd0PGLrqFRlb1Y5Vsuh6f8o2kC1LpKIEk14ehJx6zod2lSlWQ-ijYR0BbVM7qrEHV4LDj65avrHc1KboGio2pkDe7S1nlqE4LQIAk2eqNfPYjXxeRy_OgbtDLCwxLYAPN4XtCQVPJBFqmSj8BUG7ox4BbDyMRcuHALR3LIjx88Q0emfqVl8htdLSByAINVdEFIAqHEgYsYTNyfpJvhSQe3tgAgQTA_u4op_ihdaLtL7wnR3AMeL2p-b_GWadylOAcnEUqD1qiiwVkLfT75baXG3hw3KdYIPadlw3v7TRpQYfkyrF10RVC-CaQFqf_K-CEKjr"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_test_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 IMPORTANT: use the following types for columns when importing the csv files. Otherwise, they may not be imported correctly: [str, str, float, float, float, float, int, str, int, int, int, int, int, int, int, int, str, float, float, float, float]. If your tool of choice requires a dictionary of types for importing csv files (e.g. Pandas), use:
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':str, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome, however, to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  If you are using SFrame, import graphlab and load in the house data, otherwise you can also download the csv. (Note that we will be using the training and testing csv files provided) e.g in python with SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data.gl/')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Split into training and test data Use this command to set the same seed for everyone: e.g. in python with SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_data,test_data = sales.random_split(.8,seed=0)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 For those students not using SFrames please download the training and testing data csv files.\
+From now on we will train the models using train_data. It will be important that we use the same split here to ensure the results are the same.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Although we often think of multiple regression as including multiple different features (e.g. # of bedrooms, square feet, and # of bathrooms) but we can also consider transformations of existing variables e.g. the log of the square feet or even "interaction" variables such as the product of bedrooms and bathrooms. Add 4 new variables in both your train_data and test_data.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'91bedrooms_squared\'92 = \'91bedrooms\'92*\'91bedrooms\'92\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'91bed_bath_rooms\'92 = \'91bedrooms\'92*\'91bathrooms\'92\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'91log_sqft_living\'92 = log(\'91sqft_living\'92)\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'91lat_plus_long\'92 = \'91lat\'92 + \'91long\'92\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Before we continue let\'92s explain these new variables:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Squaring bedrooms will increase the separation between not many bedrooms (e.g. 1) and lots of bedrooms (e.g. 4) since 1^2 = 1 but 4^2 = 16. Consequently this variable will mostly affect houses with many bedrooms.\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Bedrooms times bathrooms is what's called an "interaction" variable. It is large when both of them are large.\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Taking the log of square feet has the effect of bringing large values closer together and spreading out small values.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Adding latitude to longitude is non-sensical but we will do it anyway (you'll see why)\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 For those students not using SFrames you should first download and import the training and testing data sets provided and then add the four new variables each to both data sets (training and testing)\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 4. Quiz Question: what are the mean (arithmetic average) values of your 4 new variables on TEST data? (round to 2 digits)
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 5.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Use graphlab.linear_regression.create (or any other regression library/function) to estimate the regression coefficients/weights for predicting \'91price\'92 for the following three models:(In all 3 models include an intercept -- most software does this by default).\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Model 1: \'91sqft_living\'92, \'91bedrooms\'92, \'91bathrooms\'92, \'91lat\'92, and \'91long\'92\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Model 2: \'91sqft_living\'92, \'91bedrooms\'92, \'91bathrooms\'92, \'91lat\'92,\'91long\'92, and \'91bed_bath_rooms\'92\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Model 3: \'91sqft_living\'92, \'91bedrooms\'92, \'91bathrooms\'92, \'91lat\'92,\'91long\'92, \'91bed_bath_rooms\'92, \'91bedrooms_squared\'92, \'91log_sqft_living\'92, and \'91lat_plus_long\'92\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You\'92ll note that the three models here are \'93nested\'94 in that all of the features of the Model 1 are in Model 2 and all of the features of Model 2 are in Model 3.\
+\pard\pardeftab720\sl420\sa280
+
+\i \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you use graphlab.linear_regression.create() to estimate these models please ensure that you set validation_set = None. This way you will get the same answer every time you run the code.
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Learn all three models on the TRAINING data set. Save your model results for quiz questions later.
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 6. Quiz Question: What is the sign (positive or negative) for the coefficient/weight for \'91bathrooms\'92 in Model 1?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 7. Quiz Question: What is the sign (positive or negative) for the coefficient/weight for \'91bathrooms\'92 in Model 2?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 8. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Is the sign for the coefficient the same in both models? Think about why this might be the case.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 9. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now using your three estimated models compute the RSS (Residual Sum of Squares) on the Training data.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10. Quiz Question: Which model (1, 2 or 3) had the lowest RSS on TRAINING data?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now using your three estimated models compute the RSS on the Testing data\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 12. Quiz Question: Which model (1, 2, or 3) had the lowest RSS on TESTING data?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Did you get the same answer for 9 and 11? Think about why this might be the case.\
+}

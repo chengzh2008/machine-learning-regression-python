@@ -1,0 +1,387 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid701\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 2: Multiple Linear Regression Quiz 2\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Estimating Multiple Regression Coefficients (Gradient Descent)\
+In the first notebook we explored multiple regression using GraphLab Create. Now we will use SFrames along with numpy to solve for the regression weights with gradient descent.\
+In this notebook we will cover estimating multiple regression weights via gradient descent. You will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Add a constant column of 1's to a SFrame (or otherwise) to account for the intercept\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Convert an SFrame into a numpy array\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a predict_output() function using numpy\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a numpy function to compute the derivative of the regression weights with respect to a single feature\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write gradient descent function to compute the regression weights given an initial weight vector, step size and tolerance.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use the gradient descent function to estimate regression weights for multiple features\cb1 \
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided below to you for this quiz. This notebook contains the instructions, quiz questions and partially-completed code for you to use as well as some cells to test your code.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/rBu3b9xYP_JR9CBdCtRLm3JvtikNiM94oqXJkPRhvZKWs21FBuWpnz1pVOissHKijuKrleKHDmm8OSXTOJejHA.vkDnsFrntgOKg7rzvzbyGw.37QSfOgqHQKqzt2toxxOmEy5t5-6I1Yx3Nq0lDquX0CzQvYXkfZAiTiDnC9mhdHGXzJ38oXO6m36KLea3ZRWO-udMsFYwcWaSV052Pz6g2cQyU44xuSXzOuXU2qnz7aUm3y6klY49W9oWdVO1VWngSnFel6-rW7uR1ofpRVVga_M6xH7Z4ZrEWJgRQmpY80HW_vExbyGc1c8YqYlmeZBfaXtNiYl4YyNUDv-OihVJU4QhbjEVcrvoySGxwHZpIAtAbWgjIGFz7Lvxhn03YEm0lkBL298CCa5Igkn9xkNjzgXqwWaWO7gGgNvbshht1pHxxo98J6glKQPgJ58vt5yhP8pg208dguHd6GlZOOL2nX68wbDVnZ7yYmyQfvHRbkzZtivL2O5mvan5VeybipcpmpZN3iafqHlvD-t4oiVS42_VLDZLFUFefGsK340XoPc"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/H4vvHPn6AZK1fdyC5G0nbM0n9-mAepTTivrFgUecyhjCgT6Mdu8MCwfKlTBnDxhhQQcHqzrTxxCUVWznC3OxeA.JgxjV7EHm_cl8ZxXEud5Gw.7Do4uybNDwVlbCIe7rji_0ZGjHwU0IkF_s4SMGwyUWhnJsbmSX_oREkRmXACg-nRa6E5GHLqFdXEJd8fSzQksolJ4RsxaYwn4HJodAlTnPjyEr-74oMFS7P38tOCNnQ5vh0n7QCdtNsVSTmvOXX6Pr8mb0VzxUQ5r9Jeimuk2WVyTn__fvj5mF_bNxqrOMrPVfdeXqSTwryzbQRaNGCSIcTmiPObERAKUK12JXXtGFjqsYRGn3qkYJ0vgACi8ubY1hXkOhyCrlOfeugVYi4WLyxsyGIe1PKObXZ1TNKqTU9Snogqx3Mmxzn5t78uieA3BxvpCoV4_cUMAHGOycMLArxwwaE0rdvKEANqbn3Mc30QTlWLE_P4kgoCZl-2cpcPRczAWFlFm0PrBfgDif9YnLXPBDORbYgxKZRhV5TL4LYdfOJPCqihUamleR39RaWOAWb3Jj9h85bi3aC-Ma3qfY7bkAPMCFalF7ZdqSWzr6UWi8o835lxQnLIa48N3ou_tjWzfjdb6AY785FZF8Ddhw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-2-multiple-regression-assignment-2-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Upgrade GraphLab Create. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create and already have it installed, please make sure you upgrade to the latest version before doing this assignment. The simplest way to do this is to:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Open the Dato Launcher.\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Click on 'TERMINAL'.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 On the terminal window, type:\cb1 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 pip install --upgrade graphlab-create\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls4\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/FOJpgcA-47msuLA4MCx5yHPn6IrNP4UAEp4xwGZRDdHPJI6BZkQC8pUOTdFyHfsVwjudJ8Uyw9NGQKtNocOEAg.arZz-Hz4trh0AZ-2ZVCNRA.B2BzN0qUZ8WSRt-EHQLFYJ--dFom09uN1eSrKoKFeb3oKo0lSGrz-TAsOmX3sx5uurI-DfyspTIW09FiqOvalz_dazZXi3sa5Gv2H3jRyBQAF_U_0Ent8soE2txBa77teSfU28MonWB-pRZoZlvABQAA9JtJU7wqwROdy_SdT9kNgOcMriR97OCHsUdv-aLtZttuOJoaahjHlHa_4d5QgxcFXFRrF0Tjy2XF3asMog9d_Njd8HHHUBsVZnVN2oWjfn5z2ZNQdziKg5dX1zBo8pYZO2Fup5T_bnYmt7IRTlk8_vbWaGG-8GIaYj_IxqR_U0rVPIsD0YCc3ZmFl6gS9O9NVH5eo9q-lyRgKYu83dwVfWdqie5X4hrQYuYG_R-YlE1zMWgbfqf-Z5Nbr_JMFyOJcwLRAI_MCQ4VK2JwilLvhNAfF4Hz1q8qDpdVR3Bb"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/p9HKCjcvpmK9z-wBR8FAiDzZuk4Ws5LO0qhCBh6WH3V_Sr6XKFtBKhrs-BC3ya_EFJDRZeQIqXYV4YCHKihiEA.7YDvXJcPzF2RMvfp6gb_pw.ofcebdatFn35Q4PU-hXMrm7lqh9JhBS-5e5CVdmzQfVVjpL08PxWpoyXkMs-1zpLb274m10_VO83cuUyEmaM3OHjoQrTeXZFlICZCRUahxybXRsp_obhH3pRvVdmkIkaYkyIHfH47E0gpHLbQqlMlbckRnFtL1EZQcGcBhSLEQSpYafG8lkj-CS7vNAuFV4CDjRYIMI9Fl-7v47DZVya8KeRcXAchgu2cHf0ZbjpdeGobGl7ZmC4MAIzS9WOG4GvKAbVMahNyNW2WQ1vw-Gu2CjCE5ZrVLuGnQBRhgDsmSNoHy-xeUVp42yp3y1BR-8OraQbjwZgJOqjCrxmWFTZZ5iACiggzkbHxl_aE8WqZF_SvPbf6S30UioxOCuq_roLqSygbP6bOyDhneV4pgfBj-2CmxASXzs0AXVz_DGj6IU_gaO-I0wBhw79IOazEIZ45f9W2LO6QI1cc6CCZ1xLxw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_train_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/1oiIPgEKrqWwqiw9k8x_fkLDwQIt-kmPVDIauRsFXGcU-nNQ_HgtZj9nPoqJh19X2-DoeRzoPrHjUK801cXCYw.KLD0A4Pr2THWszfwquBw-g.sPKCLnLWHuj4aw_3fmwne5qafzpxeE9csCEaT5WBV9Givp-qs9aZEiiNN0vxCtaapu9qFhzLyHyuqgVBfCD_NgaufNRSfI2OuI0UT2_KdHRbTGfjb4LtDH8JANNgYHiXE9_H_mcJJPILWbH1iCWJ_W2osx1yv1HVGYYGFree506qsTt2mqz1Qu7nhWabWlSY7FYtpcdgcZwm-oVLgATGeQ_afX2GcHWjlDvMhVntOPIIAOr1-_wEnOQzRLTP2nLe4bwmLJ3L8qbiS25p-ZpLhbJaMpGssej3DqaKeYjRQ1OUNfVDdVdG202Ez5ETQOtZXGH5Ci_9IsW6x-pP7Aph3x4583FnxIM13ixOuKz1T5Eqw96vzR6LPRYiW2YctXUG1Qgw7GJkyUi0ajYEDUy1P3m662rNMwVk5w_QE4xetyK5XR59sdp0EDsOY6xxRgOO"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_test_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 IMPORTANT: use the following types for columns when importing the csv files. Otherwise, they may not be imported correctly: [str, str, float, float, float, float, int, str, int, int, int, int, int, int, int, int, str, float, float, float, float]. If your tool of choice requires a dictionary of types for importing csv files (e.g. Pandas), use:
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':str, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+If you are following the IPython Notebook and/or are new to numpy then you might find the following tutorial helpful: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/HQprro3NAncwf3JN80AB_DwDLM4M5drIpq7HY5bbCBBP6REHD_r9oN-3JLZ8hrHtyOYXCeueNxNJ72WFOPZ2yA.Yom4anI4MgypT-L7dpGLVQ.pIB497Dmj_-8NgZM6Y7cTizJTmj5O-WQQxVBgGFrs92j-wRwYXHIt4XV1c9GSToDmfaRlOm8I-n4OVO6yGc0fGj8jPvhbJceg_x9_4uz-MqeZBG-rsHEhDbyTqyf7cw5mQVeCwSLVNjKv10b44gdJv8cp1xBFSXY4sH94SHobSI3fmiBUlFm1-2m4ReqoNLr7p4HfqtbSsHh2PqSyXSQV5j8KYO3lispd3TB8lKZ6PnEyYWJhJPN4xxKjKIDJQiciPGCP_aotKL_1ALerj7MEBIbMsdkKcPsMs69qn7gp5Ox7_uWOb7DwCIsvHwPH1YSf8tyOtp2VD88H6WAUnRyAMkguBy5fxhJUykCr7hEiI4uyBX9XF_1YFspr-BeJA2-aNif3GZ-oNfuZZSagJWFbsTcRCSjxPMfT1t7S_Yoq7-g7dIPvLgM9VIdHx8jLAFL"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 numpy-tutorial.ipynb}}\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome, however, to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using SFrames, import graphlab and load in the house data (this is the graphlab command you can also download the csv). e.g. in python with SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data.gl/')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using python: to do the matrix operations required to perform a gradient descent we will be using the popular python library \'91numpy\'92 which is a computational library specialized for operations on arrays. For students unfamiliar with numpy we have created a numpy tutorial (see useful resources). It is common to import numpy under the name \'91np\'92 for short, to do this execute:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import numpy as np\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Next write a function that takes a data set, a list of features (e.g. [\'91sqft_living\'92, \'91bedrooms\'92]), to be used as inputs, and a name of the output (e.g. \'91price\'92). This function should return a features_matrix (2D array) consisting of first a column of ones followed by columns containing the values of the input features in the data set in the same order as the input list. It should also return an output_array which is an array of the values of the output in the data set (e.g. \'91price\'92). e.g. if you\'92re using SFrames and numpy you can complete the following function:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def get_numpy_data(data_sframe, features, output):\
+    data_sframe['constant'] = 1 # add a constant column to an SFrame\
+    # prepend variable 'constant' to the features list\
+    features = ['constant'] + features\
+    # select the columns of data_SFrame given by the \'91features\'92 list into the SFrame \'91features_sframe\'92\
+\
+    # this will convert the features_sframe into a numpy matrix with GraphLab Create >= 1.7!!\
+    features_matrix = features_sframe.to_numpy()\
+    # assign the column of data_sframe associated with the target to the variable \'91output_sarray\'92\
+\
+    # this will convert the SArray into a numpy array:\
+    output_array = output_sarray.to_numpy() # GraphLab Create>= 1.7!!\
+    return(features_matrix, output_array)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 In order for the .to_numpy() command to work ensure that you have GraphLab Create version 1.7 or greater.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 4.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  If the features matrix (including a column of 1s for the constant) is stored as a 2D array (or matrix) and the regression weights are stored as a 1D array then the predicted output is just the dot product between the features matrix and the weights (with the weights on the right). Write a function \'91predict_output\'92 which accepts a 2D array \'91feature_matrix\'92 and a 1D array \'91weights\'92 and returns a 1D array \'91predictions\'92. e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def predict_outcome(feature_matrix, weights):\
+    [your code here]\
+    return(predictions)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  If we have a the values of a single input feature in an array \'91feature\'92 and the prediction \'91errors\'92 (predictions - output) then the derivative of the regression cost function with respect to the weight of \'91feature\'92 is just twice the dot product between \'91feature\'92 and \'91errors\'92. Write a function that accepts a \'91feature\'92 array and \'91error\'92 array and returns the \'91derivative\'92 (a single number). e.g. in python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def feature_derivative(errors, feature):\
+    [your code here]\
+    return(derivative)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now we will use our predict_output and feature_derivative to write a gradient descent function. Although we can compute the derivative for all the features simultaneously (the gradient) we will explicitly loop over the features individually for simplicity. Write a gradient descent function that does the following:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Accepts a numpy feature_matrix 2D array, a 1D output array, an array of initial weights, a step size and a convergence tolerance.\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 While not converged updates each feature weight by subtracting the step size times the derivative for that feature given the current weights\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 At each step computes the magnitude/length of the gradient (square root of the sum of squared components)\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 When the magnitude of the gradient is smaller than the input tolerance returns the final weight vector.\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 e.g. if you\'92re using SFrames and numpy you can complete the following function:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance):\
+    converged = False\
+    weights = np.array(initial_weights)\
+    while not converged:\
+        # compute the predictions based on feature_matrix and weights:\
+        # compute the errors as predictions - output:\
+        \
+        gradient_sum_squares = 0 # initialize the gradient\
+        # while not converged, update each weight individually:\
+        for i in range(len(weights)):\
+            # Recall that feature_matrix[:, i] is the feature column associated with weights[i]\
+            # compute the derivative for weight[i]:\
+            \
+            # add the squared derivative to the gradient magnitude\
+            \
+            # update the weight based on step size and derivative:\
+            \
+        gradient_magnitude = sqrt(gradient_sum_squares)\
+        if gradient_magnitude < tolerance:\
+            converged = True\
+    return(weights)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now split the sales data into training and test data. Like previous notebooks it\'92s important to use the same seed.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_data,test_data = sales.random_split(.8,seed=0)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 For those students not using SFrames please download the training and testing data csv files.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 8.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now we will run the regression_gradient_descent function on some actual data. In particular we will use the gradient descent to estimate the model from Week 1 using just an intercept and slope. Use the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls7\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 features: \'91sqft_living\'92\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 output: \'91price\'92\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 initial weights: -47000, 1 (intercept, sqft_living respectively)\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 step_size = 7e-12\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls7\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 tolerance = 2.5e7\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 e.g. in python with numpy and SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 simple_features = ['sqft_living']\
+my_output= 'price'\
+(simple_feature_matrix, output) = get_numpy_data(train_data, simple_features, my_output)\
+initial_weights = np.array([-47000., 1.])\
+step_size = 7e-12\
+tolerance = 2.5e7\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use these parameters to estimate the slope and intercept for predicting prices based only on \'91sqft_living\'92.\
+e.g. using python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 simple_weights = regression_gradient_descent(simple_feature_matrix, output,initial_weights, step_size,                                             tolerance)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 9. Quiz Question: What is the value of the weight for sqft_living -- the second element of \'91simple_weights\'92 (rounded to 1 decimal place)?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now build a corresponding \'91test_simple_feature_matrix\'92 and \'91test_output\'92 using test_data. Using \'91test_simple_feature_matrix\'92 and \'91simple_weights\'92 compute the predicted house prices on all the test data.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11. Quiz Question: What is the predicted price for the 1st house in the Test data set for model 1 (round to nearest dollar)?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 12. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now compute RSS on all test data for this model. Record the value and store it for later\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now we will use the gradient descent to fit a model with more than 1 predictor variable (and an intercept). Use the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls8\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 model features = \'91sqft_living\'92, \'91sqft_living_15\'92\cb1 \
+\ls8\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 output = \'91price\'92\cb1 \
+\ls8\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 initial weights = [-100000, 1, 1] (intercept, sqft_living, and sqft_living_15 respectively)\cb1 \
+\ls8\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 step size = 4e-12\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls8\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 tolerance = 1e9\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 e.g. in python with numpy and SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 model_features = ['sqft_living', 'sqft_living15']\
+my_output = 'price'\
+(feature_matrix, output) = get_numpy_data(train_data, model_features,my_output)\
+initial_weights = np.array([-100000., 1., 1.])\
+step_size = 4e-12\
+tolerance = 1e9\
+\pard\pardeftab720\sl420\sa280
+
+\f0\i\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note that sqft_living_15 is the average square feet of the nearest 15 neighbouring houses.
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+Run gradient descent on a model with \'91sqft_living\'92 and \'91sqft_living_15\'92 as well as an intercept with the above parameters. Save the resulting regression weights.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 14.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Use the regression weights from this second model (using sqft_living and sqft_living_15) and predict the outcome of all the house prices on the TEST data.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 15. Quiz Question: What is the predicted price for the 1st house in the TEST data set for model 2 (round to nearest dollar)?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 16.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  What is the actual price for the 1st house in the Test data set?\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 17. Quiz Question: Which estimate was closer to the true price for the 1st house on the TEST data set, model 1 or model 2?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 18.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now compute RSS on all test data for the second model. Record the value and store it for later.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 19. Quiz Question: Which model (1 or 2) has lowest RSS on all of the TEST data?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
