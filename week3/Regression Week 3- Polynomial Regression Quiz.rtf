@@ -1,0 +1,368 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 3: Polynomial Regression Quiz\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this notebook you will compare different regression models in order to assess which model fits best. We will be using polynomial regression as a means to examine this topic. In particular you will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a function to take an an array and a degree and return an data frame where each column is the array to a polynomial value up to the total degree.\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use a plotting tool (e.g. matplotlib) to visualize polynomial regressions\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use a plotting tool (e.g. matplotlib) to visualize the same polynomial degree on different subsets of the data\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use a validation set to select a polynomial degree\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Assess the final fit using test data\cb1 \
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided below to you for this quiz. This notebook contains the instructions, quiz questions and partially-completed code for you to use as well as some cells to test your code.\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ulnSbIX4HyBC4lsWeXIzfPk5FDLGU32bl_USCimrHMAncIciRgUwbf-qqqAlTXlHtAqN1uqGrKqiYhOFvhWRpw.rYLxMkFVAZGKsu8LG_hJRA.iXFAk_NsRaXJ-mzAqoRXMT1iMHBr4xA_vYL-fVT-fjs1nmexmCnEn5noRnL5sub5EBQZlnXULPLs70kwuR_-KuKMfYT1mfUaPr49DUsM6D3EQsoluGKXk3CqrRgbpDkNdZc9aJqWNkDcbllJcsHNbapId5TZXhCzFLYuIXboiVmxiY-lQLBtLiuIcq3ju-4qTT5wCD3gcwIJw9FL5s1a6J2Ij4FE5uRzYQEUW3ysYrvFe4-5IXqM3PFvr4t0rUFuBVngSfdQRS0n8Hg0ONmZxRVoh8QYs9etsYnZlspD8OuQA2s8KlLKdTzSUilT9fQ6H7xMjHq3SFYp8k8ZK8Qn3sgyTcpagkZ9krcbI1ZCgD1JCleXaneuD3fsXRIgNgK22dVl20P_xG8hO5IIHncww7MiPr8mWgkiAjCFVj7oZNsWYHCyxDPC2P4eIgZwxVHZ"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/bNH1-uon50NGvclPD2hj5lOXng5V26LkLJ1nizRIrWdCv466cMbxUwa5I9S3h6q7AjzTjZWD94tmNkmQbegflw.RDrbJPyAQzYqn3rFJQhWaw.BUSRByuzyfyrukais0lVkytpq4zvf-YDRw3hzEINT0ghvZUFt783n2Y2dxLSMo6oaF0cdUSdCY1Fud4hZDzHIwdVhqPKgKNzqAjLaoMpmS3Vr9iagg7uTS_pjWCB0kfcS-uQ5Yv2pZnkdPxyRKgfX4NFPtZZBYDtPjr2HuzCyAxomEEZm08Y5IuB4qoHOQ6v6pwJL1H0HfNq40xSB4E6wEpEZQi0345sipyT8Ke0DXwUtd6XQAKHNDbG8GglZ0F1BpQIn3QPEx9_ukclWVnhEEBpRJfYc4iTYFR6WwP4unJnQMS2TdYeV2fuDEsC2IjZCYksH6iHISv8LvXYGvUQNGFlBBDmXqtIVKpBx31CIq49p7FNLqO1oYhM0qwDsHGPzQP4mPBiI6w9Beo9coY5fJwb_p1PngCgv8xTFIlUKhh0A6cSInARyndvFIfzhEkrNr1cQnsma4Abgg4MeF7wv65dChgicqO7TYgNUZoRYPjYnlR_hdCiG_ZaBk9NYvbqbNaUBmq4Aodhe2LBw9YejA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-3-polynomial-regression-assignment-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/og2If5kXk9cuqJsMCfPzoa9-rgznjDQLyRqXMp5NUNel0l6KvTkdqb9l5a0Q0bbjXnAUjGc6aubXX4TBn6SQUg.eUzjkKNa3MuXTW8V9VVahg.bcKs7UW-0VXGzMJ0HzAnt8HnxRTq-p24P6hIUFGExNU-BA3N1fXNceBlsFZSvjGGRFIHa9iMt8W84rj8CWhkWfL1A8domMKpWBBgisjHZ4lDV9rsBz84Q2RZXmdyWLLW2dCfT7hYfjAR7bl1Z7kX9gqvBKL7ZtJxuviHXoPKIHNNZ1ivfyLo-XBO97pCLh5BdpsMN92pWo2J3C__o7lhe3IIb5g64vNmW0eozoaUquqMjjkOwtu0O78TOfEe_XlGL2g06TVa7v1Qn6C4AyivxLakrckjAJoFKdAEl1O2hGFrG2_5AtbTlVQ6oQL563klV7L1C0fmr58FFCM4RJ_nBHx_5gnvrsPw2Hw12BkfvJacR0QfW1IlHUp2gdMtUZd3APQ3JLxSOrqevPAC3dvunxPsqdyZEoXGEjDO4NiOyRZRJbdObfVfgM8_tNiVOC5K"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 NOTE: The following files are different from weeks 1 and 2\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ysj7g7vleagdh0Co0Ot1HSSY2slSHqidIVLPDceyt3btDGlsWzQ1v_jo2F0QbjbCzZ5qsq4wSAZBMS0qOjG3eQ.99IbaGCUdefzmiQxny3kKA.TPnCpGDWAyFWAPM0Dv9EjdaSWnb4dGpXuRycO_Ehw8oLeC4oAnhnjJmHIkdvUqS99cKBphrZl96mzUHVWf-1Wm8oKN2bDepqs2PK4xVIf0Dm6m_MNyH3_6fZj5Qlz5T6KdxuQPejyZwDJ51ypfVOH1QwOWJ5XF8c1glFt_7mrBcbhwRINFZQkSSr9z-LB0_sUF-TSJV4VLZLAszHtlWixZ8b3-H1Kc_O8HXY8eoJkz0NNfmwzfDwVtfXKiE9xi6xYeG9NuGfXNszpI05JTieDgOQnuTj05miDddSNBZ7c1XR6nsGsfgu_QJu3W-BbfaE6j_eKBgcIDO-LWGI4yaJSCef78zzmlcnb26bQ7rBwYmDC1hA4GukZ_GhfcP04ifVSTmN9EPQmpQXgB0YsTz4vrWn5NkPmoXsaWDv9sK3GwUtql9IoowcDg0j2eUDV3a-LtpXwoR4WnaCCbL5qU7qNw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_train_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales validation data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/MaMD_Ul-ttZNFq6gEtV6uJHKvMYBZNHrzgefbzx0LcZZMNBvkLRGzsmSiw2j8uwrzTEWm71mczgamHpewmJrHQ._DzfC_9wD3cP2hCglV0R1A._1NGn4Gp4qLwCVVl5UIcJsvTOZGFix9lDBK5Tfp70exc7C3H8QRjr07ax8YxDqTf-qTcFJkf4AcVXFeY46FbZhc5rHASdUxySJyVibZO4YHagkBR3By63_-oGZMivFv-ZZUVDC5aaxpssCWgFnIv9l_O3ivDCJItE4xnRuaJr6AJRFe4StMikfA1DYyObvLXcGPGtCGCI_r8TZzMq637yeXVreiaS0g6vIA1PNgAKz-9JUWVixBgPJj_J41UEcVKq_5wFu2X2mi-0AfwRlSG9GOguEn1fvcS1A6uNWnbueM0bKFzY-JBJNxlxJ-FgFwJer_y6UDmM9oQyfOlUoZO3_AxmfH-5VPPx2e2ZjJWxEilfXa7xqgLuJ7tpvWw5dLPILrkOQK1hmkmUR1UHajv1l3-m6l6FuuTYFqYRFIzyWzBVYftQNmZ6caIdY5Dau35SaiVXL_J8OPKl_BLUuJTCQ"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_valid_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/fre6vCCZkty9l9mahIDPqdfvwhGHLCxPIEzO-yyQcR69bcPc5axMxcaiVEpNwzbQ7IdHo4OCo7xPOaIu7-vH9A.ZfLuio5-HGwuIvz49s4ZAA.mLpjbni0GobyD3WuTTXt7fQ-mW5qJw9aBIGAKK1JghPZKSByKvfJgc4-eisPfN2V-9dCjo29LrGf8aZ4V9oNXL78867bt1bWUKPjx5SvUxBCrKrlCVsmIFkHYg7ndoDKQS-BWxDCpVMtZFuvaV_0qBbB66sx04S9GULLtzYWyUrUaG-iJZFz-2bKlKLtYLuN43W2qGojpBC3dQepnuJ92gMQELCfItyNoi2qtKi41C4QvK7A1P66K1sAHJfw0SHflXSZoK2ULX1r5C6NqztRbzjpEjCEfwZ-33rxKPbnn7wPMtb1u-uFAb23q2vyIh0Uh113LMLJBmauu7LrKgYgPfNU-VS0i4GjSOw2_rYSZgm1kef8oWG6RlSx6IAOKrawBCa008bOZJvLcFBgGLJCwQObaZYO6RUIIgwg-7XW9sjYI3fVVEtDLitjYr-VJQszLMlZ8-ASxUEHSLGU4W9V3g"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_test_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 1 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/qPLi5r7xqulssKaNENaCUTBDxBJa8tHgz0wUi1g8bRa1yS-5dY4qPkBpVJGH95AMYcEy7HFp9QOwAgBAE6ZkUw.m8S3XrmQccQr50ZRngzmcQ.WipXE54QZ6VYiytG4OQCv634vgxZcNVt-_6Jr7IglbjPn8V--gnn1jrDKUWLBEs-9369V5TK8P8OrmlXUk4G8gJLBCXerqwL8oNaZomo8ETNDuiCxxII-DLgfYPRvk9lbCsexgAO8KRExHZ7rzM3e_BHEjKGIqgL24avdZ2n-djFTVfAERSmMTzuEJAHJllO-pwE6VPqz1AdQCB4tg8gEcxY2hJTP3gbNel2KE-v-4ClIe4SdT9LlPKlbuN-y0UKnlOhYtjbE2lx9QFEEpCjVlZVYq3Y4MCovuE3LulyajrhIk-2u3x2_GHA_sv4AIOuX81SFXKNMAv0BMuIXS1hlkRghCDt0ORXu7BLokfbS7UKs-cEAAHIsQhel9L25c500N8TeZeMnxaRq046NcGPQgHmZZQflG90zjWqQkiXUlMswCViKZUYCaMrecvx2XybJipF5Zy0tPmYV94Yxdablw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_1_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 2 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ytIbJQ0XQdty4EoBPAJFxVxG7thmSSZWTjllo0BZ-I3Cayd0YC-gPrq7FacaYkeRMipwJ6U-QNXTdx3ljorsXg.eV-Gva7ClJ74QZOKg44vDg.36IoYW9zYk1hjtnTYDUwgV6XNvOK1V9EZiFJk8tLPMz1tjA4mhMrlhrQip81FfwOmbXl4AEvkQ4g3FkWqhCGAelrLMaLQZs6-U5Ds0Mkn1vCWdgOMbYXi2rnpwRSuI3CgC0xvKn74-knaS5SAXl5XMBWbv8z-v9AdQLr58iKssvYTuSme2rh1wSKYap3G6vkvH-JWMFtEc1_nxIRpD9qrMHb9lHxZSflfpBzHjuULtA1_AOC5krxIkQXkOgrRjsSinJfBmFjB-Y4Olp53DsBrTcg-sQU_EDZUSAA-vK2vl1GWZrhZ2F1_MDWhnwvTugDHp4bmZ4dkQ94ok4T1Wj9YQdb3RNbaUMPwT53lNOD9dKdwkAeJvAWEFxu2R5DQH00BYoMrZ9gr8GdQG3NEJQIVXlR8WEXMStGcGyT8YnocjFhyKJ-TIJRwrrax8Xf-15Ebgj1YGrIhFeFbyl3z-YgzA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_2_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 3 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/UcW_nEgK4_yZmCn50TUhHirRrJieGk4eaKhr9-grUE9Hf_c3PtHXLrp8Ueg6uYpXnPGdRv8F_AH0wZdA0PL_FA.p5prJkurbg-6sQcCgyiDug.cdzbyvpui-8hmywsfJOaCA_YMEWLQOjSK9WW4pRSHt50hEX1xbWmkys7t_TFXt4Zq61PvT0VUsOUMJRmR9f362YTxPjyHVmWPgSGtnRSMxc-axYywbRkE3U8tdEIFOiQGiWE4meJPiq9HpjZiNCmwRVDVwXFeP55Ygd2IWr0KvD7rYbqXbLZuiSpln4LIAKHxM07PwNXDo6N5VWa6CFKOiHtPGQ4YjthYadzNnafiQDTcbRezy3WSqwy9MWddyMgwQZ6oCS25QsdCIdy5Yw3FSK5dVUsStxXNWzJ8Bj9-ksa-02qK_YAKP1ZXMNtOK1s_RITZjHUlLzESIVsVivG5uhtWIbhvUEJI3RNDGtCzqEeEs1JpB5k-tMabIFFXB_Omnu_UmsBxVnswks_fUVj5JOyOq5t7MaQAVR_RYOweKilYGnGp7SrThf6tQNLh1gJWiYrmRXA8ndbTciQHKrj5Q"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_3_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 4 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/3po29Gc7g8KHAF6n6err_Ckc3Rap8JlwcTtg7Pc2hPfT6MfNGIw1yhiwBjrZTl2iI5L9b0-Y7tBJ_m3eFaoFlw.v70LOaB17WdnXAK1FLSt7w.AlknXo2Rh204nYnWgn21iSgUeRdLx7QAyZHbJil8zM34smOzUkO4AgVFcnh-23QwwjfoJWBusSuQ5wmj3ABnRXz1L3IvZnDOR8khyjcy5tcjWi77jnaaKBaF-OemMqNmEjVcHzLTIv1PNufcr0LEv6C8tw7zWx3gvffsEuZF_nXvY6mgiWDFvwnaOJwa0iFBl6ioZogwzS_N2cbJX1cCw2kaES4Ixa2genVhxX-_BocBtCO_NSinvRdzUcLokevgihOItq3gd2vpJT42lhO_Q6CiB_wvNx_lDmvpvcBiCaqxL02xR7FL_IA3g_H5FjAIv5XKidhPECC51o9Hu6KfPozDpR4HdCOjdhEO0hs__3nC4YeXrXVe5Rgvao5b4SoklMsHfN6BYXj2-7zjUxPBrQULHE7WnV9sdsOloBQDC8TXp0LMcYvChwNncpvlzm8lIqielV3eusjb5oqLLD97SA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_4_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 IMPORTANT: use the following types for columns when importing the csv files. Otherwise, they may not be imported correctly: [str, str, float, float, float, float, int, str, int, int, int, int, int, int, int, int, str, float, float, float, float]. If your tool of choice requires a dictionary of types for importing csv files (e.g. Pandas), use:
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':str, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\pard\pardeftab720\sl600\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+If you are following the IPython Notebook and/or are new to numpy then you might find the following tutorial helpful: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/qgwIYMV9STT-k1ddkqbneJjKl_oIKy1xGZan_C7Y8PZdCvv8mjHjKYwuk1xpTi7S6ARQ7u1UiWpkmrnyB-sDdQ.i_Oe5yAktowHtirepg-4fg.Rt8zXnZtRpVZ2JAINb7tSV8oS_QvjkGu1ED-iND25Qi9dNfOFdAJOIlIhHW314W4o8BCzj_ukXDr1I-gWab6xwrw9vEIj4GfWMtjWy5f31YhpWETTruHUUwld2RN_XY2NFQIZIbNydgxZ47BoYOKyoeuYXovPtRkS27Nevx4hwyiJNTgN-wLryyrPFy8-T3EzdP8rTGBhbBZyPGBR1Ng3AqlovIs3_W6Z6a3KHllA-q4w5qkZvxryY5NwmjFHugP_UyLa7ALLlWw4qtsMfExYrc0mU9ilsYBaYiyFjbllbIBIGjaHP06_SZHjOSp_xoO_oGtAKh-Unv39WOjgK-N7-y__DgHjFYduxHg6sMpoqTTnnbfEMsbZuhNb-9w9ZQXoBL-or0wlgt210UnSf-BOWNkHHP53RkDu3tPqEd9mXCc3jWW5m-xK7fupsJmmlBV"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 numpy-tutorial.ipynb}}\
+\pard\pardeftab720\sl600\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome, however, to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You\'92re going to write a function that adds powers of a feature to columns of a data frame. For those using SFrames:\
+Recall that if we have an SArray \'91tmp\'92 we can get a new SArray with all the values to the third power with:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 tmp_cubed = tmp.apply(lambda x: x**3)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 We can create an empty SFrame with:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 my_SFrame = graphlab.SFrame()\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 And append the tmp to it with:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 my_SFrame['power_1'] = tmp\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Where here \'91power_1\'92 will refer to the power our feature was raised to.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Write your own function called \'91polynomial_sframe\'92 (or otherwise) which accepts an array \'91feature\'92 and a maximal \'91degree\'92 and returns an data frame (e.g. SFrame) with the first column equal to \'91feature\'92 and the remaining columns equal to \'91feature\'92 to increasing integer powers up to \'91degree\'92.\
+e.g. if you\'92re using SFrames, you can complete the following function:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def polynomial_sframe(feature, degree):\
+    # assume that degree >= 1\
+    # initialize the SFrame:\
+    poly_sframe = graphlab.SFrame()\
+    # and set poly_sframe['power_1'] equal to the passed feature\
+    ...\
+    # first check if degree > 1\
+    if degree > 1:\
+        # then loop over the remaining degrees:\
+        for power in range(2, degree+1):\
+            # first we'll give the column a name:\
+            name = 'power_' + str(power)\
+            # assign poly_sframe[name] to be feature^power\
+            ...\
+    return poly_sframe\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 e.g. if you\'92re using Pandas, you can complete the following function:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def polynomial_dataframe(feature, degree): # feature is pandas.Series type\
+    # assume that degree >= 1\
+    # initialize the dataframe:\
+    poly_dataframe = pandas.DataFrame()\
+    # and set poly_dataframe['power_1'] equal to the passed feature\
+    ...\
+    # first check if degree > 1\
+    if degree > 1:\
+        # then loop over the remaining degrees:\
+        for power in range(2, degree+1):\
+            # first we'll give the column a name:\
+            name = 'power_' + str(power)\
+            # assign poly_dataframe[name] to be feature^power; use apply(*)\
+            ...\
+    return poly_dataframe\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 For the remainder of the assignment we will be working with the house Sales data as in the previous notebooks. Load in the data and also sort the sales SFrame by \'91sqft_living\'92. When we plot the fitted values we want to join them up in a line and this works best if the variable on the X-axis (which will be \'91sqft_living\'92) is sorted. For houses with identical square footage, we break the tie by their prices.\
+e.g. if you\'92re using SFrames\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data.gl/')\
+sales = sales.sort(['sqft_living','price'])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 e.g. if you're using Pandas\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = pandas.read_csv('kc_house_data.csv', dtype=dtype_dict)\
+sales = sales.sort(['sqft_living','price'])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Make a 1 degree polynomial SFrame with sales[\'91sqft_living\'92] as the the feature. Call it \'91poly1_data\'92.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 5. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Add sales[\'91price\'92] to poly1_data as this will be our output variable. e.g. if you\'92re using SFrames\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 poly1_data = polynomial_sframe(sales['sqft_living'], 1)\
+poly1_data['price'] = sales['price']\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Use graphlab.linear_regression.create (or another linear regression library) to compute the regression weights for predicting sales[\'91price\'92] based on the 1 degree polynomial feature \'91sqft_living\'92. The result should be an intercept and slope. e.g if you\'92re using graphlab create:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 model1 = graphlab.linear_regression.create(poly1_data, target = 'price', features = ['power_1'], validation_set = None)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\i\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you use graphlab.linear_regression.create() to estimate these models please ensure that you set validation_set = None. This way you will get the same answer every time you run the code.
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 7.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Next use the produce a scatter plot of the training data (just square feet vs price) and add the fitted model. e.g. with matplotlib and SFrames:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import matplotlib.pyplot as plt\
+%matplotlib inline\
+plt.plot(poly1_data['power_1'],poly1_data['price'],'.',\
+poly1_data['power_1'], model1.predict(poly1_data),'-')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The resulting plot should look like a cloud of points with a straight line passing through.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 8.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now that you have plotted the results using a 1st degree polynomial, try it again using a 2nd degree and 3rd degree polynomial. Look at the fitted lines, do they appear as you would expect?\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 9.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now try a 15th degree polynomial. Print out the coefficients and look at the resulted fitted line. Do you think this degree is appropriate for these data? If we were to use a different subset of the data do you think we would get pretty much the same curve?\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  If you\'92re using SFrames then create four subsets as follows:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 first split sales into 2 subsets with .random_split(.5) use seed = 0!\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 next split these into 2 more subsets (4 total) using random_split(0.5) again set seed = 0!\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 you should have 4 subsets of (approximately) equal size, call them set_1, set_2, set_3, and set_4\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re not using SFrames then please download the provided csv files for each subset.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Estimate a 15th degree polynomial on all 4 sets, plot the results and view the coefficients for all four models.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 12. Quiz Question: Is the sign (positive or negative) for power_15 the same in all four models?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13. Quiz Question: True/False the plotted fitted lines look the same in all four plots
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 14.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Since the \'93best\'94 polynomial degree is unknown to us we will use cross validation to select the best degree. If you\'92re using SFrames then create a training, validation and testing subsets as follows:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 First split sales into training_and_validation and testing with sales.random_split(0.9) use seed = 1!\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Next split training_and_validation into training and validation using .random_split(0.5) use seed = 1!\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re not using SFrames then please download the provided csv files for training, validation and test data.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 15.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now for each degree from 1 to 15:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls7\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Build an polynomial data set using training_data[\'91sqft_living\'92] as the feature and the current degree\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Add training_data[\'91price\'92] as a column to your polynomial data set\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Learn a model on TRAINING data to predict \'91price\'92 based on your polynomial data set at the current degree\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls7\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute the RSS on VALIDATION for the current model (print or save the RSS)\cb1 \
+\pard\pardeftab720\sl420\sa280
+
+\i \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Hint: in graphlab.linear_regression.create() you can set verbose = False if you want to suppress the interim output of linear_regression.create().
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 16. Quiz Question: Which degree (1, 2, \'85, 15) had the lowest RSS on Validation data?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 17.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Now that you have selected a degree compute the RSS on TEST data for the model with the best degree from the Validation data.\
+\pard\pardeftab720\sl420
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 18. Quiz Question: what is the RSS on TEST data for the model with the degree selected from Validation data? (Make sure you got the correct degree from the previous question)
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
