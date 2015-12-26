@@ -1,0 +1,498 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid701\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}
+{\list\listtemplateid9\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid801\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid9}
+{\list\listtemplateid10\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid901\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid10}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl480\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 4: Ridge Regression Assignment 2\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this assignment, you will implement ridge regression via gradient descent. You will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Convert an SFrame into a Numpy array (if applicable)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a Numpy function to compute the derivative of the regression weights with respect to a single feature\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write gradient descent function to compute the regression weights given an initial weight vector, step size, tolerance, and L2 penalty\cb1 \
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided below to you for this quiz. This notebook contains the instructions, quiz questions and partially-completed code for you to use as well as some cells to test your code.\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/nAj330ZMfWPNpHgOp_SO1a1z3ylAKLNp5SKeNaenNC9LfOz8CVAze7ndl8PjErWdFaC763qDFuYa1Nx8c7euOA.muk8eOKFXxvIjb3_X75SLg.YjLFAdUgYLsYilnHfiHTdLhgl1_Q8wa3oUFO6sNAAfq5ExfqfKaL4yQYlpNIm0OKVpna27CIANj1sXmvEY-4Dt9JsNlQEcJAZM5qiW_4ELeHg9ulhhZtFUsCnfPpbQ38TkMWOOvKqSW4T4HZxvjVTM6ct6Xg3507J7_9oCwe410cBmU4FUwVvJ_LLpq2PFhuDaMq10qPff9tH1CgPY9kW2DDVdccAQXMVERTTN-fwhPer5J5o5xhzMUCpCQFhRilgE0WWAxFK2tmj18-cwzatMwSap8oE-w7pOFbN9vIJUt5WbLCLWKliZNBZGCGNU3NJ1vAY25h-r9WmJFDF3JdSflUSwFA1dT4Av6Gj2PEk75zPHfY846urEOWfbrpY90vHWtIGc_UNdXoBdWpomDqnjJox5CDvzfnchmARWcyrcdIAFKZD2EWTb7JnDPcBCH3"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/2Xk9DhqrrSv9YKa_8U34_oH3Y7VCXEWPfl8UkjQzJ1z2-na0meIUGzMVsUDcCsKo-xIpA0QU4NNA4_a_xhsOjQ.BRdHJrAt4PBlcJSrB3ehbg.F6Yu7Xu1YIp_4yM__S2fw_8G_aAiFnDgbvXQUBcq692JiePaWWfGaq6kN5dPB8li0_j5ODr-yqkpqUSSIVRqv2q6QXfZo7Y-ZRxNNv9Uuo8btuygeISWab-qci7CP6BTi19IdX1qHaCtIM4QJ9dz5DKrd_vqW7DL1A1ITSWioYYURZMu_ygIvZB_QmnBUCXIp_6kfgDXWpeD75PodkAxvvcJL8IyNihpw3cMsFMrxACPf6ECKyaYxxmB_SgBBmuxJKvXwT1hItK6m0kF65Kg0P_hFPiZW4liRp94U9O2epT2NLw54T-1CRSfg5EOmKj6K5swaaZIc21HHmRf5yQvxRNxVtOjPdPl7e-_6he56EocW56b5PAX1swl7ksFypOVpj47WZmdb7OuaTk5tsIlPaMEiN5AJxiiw8WIvtuKksL9pWdgE6w4R0Aj_7-Jka2JjkLOgv0GZ0tH5_AgnQAlPT7eaDB03fKMjHmelTkiH6h9Q1oPgQEyV819aRnV0cca"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-4-ridge-regression-assignment-2-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/5D9SYoo6oRHO_NFmlqcutWIApURbZduZieUHdUZcVwjziYEPdL3dTS8Ox8-i6DGMBoSxKGt9KoqO63uPTDm_kQ.Py-f0imIfIbcBjvXBssAQw.tzopEMUzCcTpNtc6HO6MY0j6TMBoDwO3Ls707zC8tW8-GQDigcWYG6nWfK-xYnI5C_5qryBHvl7hnOm8D5CWN6hcGje2TTSS_Cbnf5z37uYSTNKi4lj_bv56TmFmRvBcf4LUjk7NTSO2Qz8cjVwz4-ZrZjFT1JhEybF5gnHc2lUxSJha4eSyxX3_OfJ4ncCGtFAI5EpmMIag0poT7dZgOxDvPK9xmPzs2pYmUxUHfOyN_X12pubTyj4x9xwVT9N7OLckEV7BU_fTnnjsl7GY1C3fvKdTC7AozuUJaRi0RHleX3cULmobErgYoMt18TaAlIjAGHhu8XoR2Om4y0pXIXyfMPRuslXFgSPTwiPJBF-b8_x936SWWNvxFx5moc4Dgm0awaZN1NuJ7ZKm55b8ogpKnvPpETNOoU2G2V1Cpf_SgOXNXR_o4lkSPi8e92Pg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/s2GlHTT8bHPWdycHD22KrNXuyB96fHYW07fNaC8I_H4zdy2-1vCd-LO6EtdfSYrc4EXYb7_iTxQrygcykgudPA.jOvz3Zx0Vj7Edl9dLr5Vaw.Su72CG5XRMmCNhGg6ye8sRZgjwWr2Su9Tlgckx1KbQEVkWXDvCNd9GxOEKhycPLQeX09zhBVcDsw7OtPUjh7F5T_OOLtoGKho4vxle3z_FrUQwKmF6nro5jYyoi1au4c3XbnUNjWIYlnhb49qcv23Rfi8-HSq5EtCIXr_FK1lJA8QLYIJT7L4T-B1ajVlKM53DdX4Z_vPiP5HqK0AjrmmnF3tPa0_CpP7cBgOFg_LSWHjXRJN0CqLEAu7_mlJNUPagpL68dhH6uuh851SwtIDtjmn0WmNEq21E8z2-3HSTsx2lcR9yiBqIvVG6f6aVm-_FafvVANlUERpAwaf40ebE4YrHjTGcXy2R2Kh9gYsfcdSOiVsD85hkkzajZ2uqsyfTGFybu0FNo0KvpH_l77MDwYdABjZXuSzl5uftPUAI1KZhCN-Ey7eHzZSmEd2d1HQavf2pB6hfMEN_sTkVOGSw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_train_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ObDTaVfB45ZFJFdeA6R0ouZ4C-GVGpnwhFoZPx_3UEemx0By3B1PY3u87DssLouS6_4mZYGOmlnu1Mq4ewCvFw.fh7h1XA997vc0U0eSMp1kA.vn6egZPIt6ICN0pJSjqAb76WRb8HWBEIAO3890uu_qFCAy_Cd2kAIgpp8SZvM38kCggmAHNUiKcJWU_FYTmpCoUioLsBZhE58O-SLsh32jiU8Rfp9Dpv33si3AbCA_SqzD0nVJfMlzjAGTH2ySckUV07cCzit1TYYfqO_jCnaMqtgej22oj4HwTp4JX-AigAoY0Xhscdc_aAfJbPTLogSlXfm-fLwnsnS9toC_zm5p980KB1dsOUjBkX6PUsgFFI2JciY_AfIiMdM9H9UFxqLeaDCEL9GcouQCXA9aQ4SBNGGWhM4yGY3TB8X3UlxlYVVX1HH_r3pWmwCYTuOuB5JZ7HyvNS_6fjxwPioye2ka-C39meLH2JIdYox-lrrYcIQKtjpI0cb2Msg6g-vU0hM7NCvizTnKpkqqfBbAymL8eRuNiEj0OSajWDWgzoESf9"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_test_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 IMPORTANT: use the following types for columns when importing the csv files. Otherwise, they may not be imported correctly: [str, str, float, float, float, float, int, str, int, int, int, int, int, int, int, int, str, float, float, float, float]. If your tool of choice requires a dictionary of types for importing csv files (e.g. Pandas), use:
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':str, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\pard\pardeftab720\sl480\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+If you are following the IPython Notebook and/or are new to numpy then you might find the following tutorial helpful: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/roxRp_ALeajrsUFlG7FkDjcK46s2d7fWkl_p81o4raCVftWjymqqpFCP1HndtL4k5OgLui4krTC6zH0NyBbqCQ.wFMmVdFJUPhtP1cOGFrTPg.3cPYKl-hHHBkPeMeiZu4XF-YYhGQGKJKfshyqHGF4NztCwbSut3TdsPanOLaGomAs_lFi7dsaH5Tfb5rc9ml9KvU8NPBmyTci1MxmClqTJ35OMsentc42lDksW3nT7zMSTYZdkl77w1TaAxC3mM9AHsx9kGN7t7xRD7Xmcvk8aBe65mEbfvjw3ECLsiLJ7jj97AffvVxjpfEE4aK3o_yLfTp-TPdZcNIdgxcYr2v2KyDY8vlZRFAqdu7n9WQxkO7WNUuiQQiXReAEjHzARQMCG7IZdWCGBqOcUICP1on_rfe5wpkZBdqPnWe1wH8ZqbW--ms0qmjhMb_0-WMWxa77U1vvW2SqsSxuIroF_Rpw7l1-7zP4EY_yQyvrTVmO7MtdVgC2mMHkIeAUpleIKTctHoAzTcoT2KDd7ZPYb81kJKja6Mo_2KwVJ-kznbfAcDi"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 numpy-tutorial.ipynb}}\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create and the companion IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Open the companion IPython notebook and follow the instructions in the notebook.\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using SFrame, import GraphLab Create and load in the house data as follows:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data.gl/')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Otherwise, load all the three csv files.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using Python: to do the matrix operations required to perform a gradient descent we will be using the popular python library \'91numpy\'92 which is a computational library specialized for operations on arrays. For students unfamiliar with numpy we have created a numpy tutorial (see useful resources). It is common to import numpy under the name \'91np\'92 for short, to do this execute:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import numpy as np\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Next, from Module 2, copy and paste the \'91get_numpy_data\'92 function (or equivalent) that takes a dataframe, a list of features (e.g. [\'91sqft_living\'92, \'91bedrooms\'92]), to be used as inputs, and a name of the output (e.g. \'91price\'92). This function returns a \'91feature_matrix\'92 (2D array) consisting of first a column of ones followed by columns containing the values of the input features in the data set in the same order as the input list. It alsos return an \'91output_array\'92 which is an array of the values of the output in the data set (e.g. \'91price\'92).\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def get_numpy_data(data_sframe, features, output):\
+    ...\
+    return (feature_matrix, output_array)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Similarly, copy and paste the \'91predict_output\'92 function (or equivalent) from Module 2. This function accepts a 2D array \'91feature_matrix\'92 and a 1D array \'91weights\'92 and return a 1D array \'91predictions\'92.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def predict_output(feature_matrix, weights):\
+    ...\
+    return predictions\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 We are now going to move to computing the derivative of the regression cost function. Recall that the cost function is the sum over the data points of the squared difference between an observed output and a predicted output, plus the L2 penalty term.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Cost(w)\
+= SUM[ (prediction - output)^2 ]\
++ l2_penalty*(w[0]^2 + w[1]^2 + ... + w[k]^2).\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Since the derivative of a sum is the sum of the derivatives, we can take the derivative of the first part (the RSS) as we did in the notebook for the unregularized case in Module 2 and add the derivative of the regularization part. As we saw, the derivative of the RSS with respect to w[i] can be written as:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 2*SUM[ error*[feature_i] ]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The derivative of the regularization term with respect to w[i] is:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 2*l2_penalty*w[i]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Summing both, we get\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 2*SUM[ error*[feature_i] ] + 2*l2_penalty*w[i]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 That is, the derivative for the weight for feature i is the sum (over data points) of 2 times the product of the error and the feature itself, plus 2*l2_penalty*w[i].\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 IMPORTANT: We will not regularize the constant. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Thus, in the case of the constant, the derivative is just twice the sum of the errors (without the 2*l2_penalty*w[0] term).\
+Recall that twice the sum of the product of two vectors is just twice the dot product of the two vectors. Therefore the derivative for the weight for feature_i is just two times the dot product between the values of feature_i and the current errors, plus 2*l2_penalty*w[i].\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 6. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 With this in mind write the derivative function which computes the derivative of the weight given the value of the feature (over all data points) and the errors (over all data points). To decide when to we are dealing with the constant (so we don't regularize it) we added the extra parameter to the call \'91feature_is_constant\'92 which you should set to True when computing the derivative of the constant and False otherwise.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def feature_derivative_ridge(errors, feature, weight, l2_penalty, feature_is_constant):\
+    ...\
+    return derivative\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To test your feature derivative function, run the following:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 (example_features, example_output) = get_numpy_data(sales, ['sqft_living'], 'price')\
+my_weights = np.array([1., 10.])\
+test_predictions = predict_output(example_features, my_weights)\
+errors = test_predictions - example_output # prediction errors\
+\
+# next two lines should print the same values\
+print feature_derivative_ridge(errors, example_features[:,1], my_weights[1], 1, False)\
+print np.sum(errors*example_features[:,1])*2+20.\
+print ''\
+\
+# next two lines should print the same values\
+print feature_derivative_ridge(errors, example_features[:,0], my_weights[0], 1, True)\
+print np.sum(errors)*2.\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 8. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now we will write a function that performs a gradient descent. The basic premise is simple. Given a starting point we update the current weights by moving in the negative gradient direction. Recall that the gradient is the direction of increase and therefore the negative gradient is the direction of decrease and we're trying to minimize a cost function.\
+The amount by which we move in the negative gradient direction is called the \'91step size\'92. We stop when we are \'91sufficiently close\'92 to the optimum. Unlike in Module 2, this time we will set a maximum number of iterations and take gradient steps until we reach this maximum number. If no maximum number is supplied, the maximum should be set 100 by default. (Use default parameter values in Python.)\
+With this in mind, write a gradient descent function using your derivative function above. For each step in the gradient descent, we update the weight for each feature before computing our stopping criteria. The function will take the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2D feature matrix\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 array of output values\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 initial weights\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 step size\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 L2 penalty\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 maximum number of iterations\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To make your job easier, we provide a skeleton in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def ridge_regression_gradient_descent(feature_matrix, output, initial_weights, step_size, l2_penalty, max_iterations=100):\
+    weights = np.array(initial_weights) # make sure it's a numpy array\
+        #while not reached maximum number of iterations:\
+        # compute the predictions using your predict_output() function\
+\
+        # compute the errors as predictions - output\
+        for i in xrange(len(weights)): # loop over each weight\
+            # Recall that feature_matrix[:,i] is the feature column associated with weights[i]\
+            # compute the derivative for weight[i].\
+            #(Remember: when i=0, you are computing the derivative of the constant!)\
+\
+            # subtract the step size times the derivative from the current weight  \
+              return weights\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 9. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The L2 penalty gets its name because it causes weights to have small L2 norms than otherwise. Let's see how large weights get penalized. Let us consider a simple model with 1 feature.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 features: \'91sqft_living\'92\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 output: \'91price\'92\cb1 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Split the dataset into training set and test set. If you are using GraphLab Create, call\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_data,test_data = sales.random_split(.8,seed=0)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Otherwise, please download the csv files from the download section.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Convert the training set and test set using the \'91get_numpy_data\'92 function.e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 simple_features = ['sqft_living']\
+my_output = 'price'\
+(simple_feature_matrix, output) = get_numpy_data(train_data, simple_features, my_output)\
+(simple_test_feature_matrix, test_output) = get_numpy_data(test_data, simple_features, my_output)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 12. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 First, let\'92s consider no regularization. Set the L2 penalty to 0.0 and run your ridge regression algorithm to learn the weights of the simple model (described above). Use the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls7\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 step_size = 1e-12\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 max_iterations = 1000\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls7\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 initial_weights = all zeros\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Store the learned weights as\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 simple_weights_0_penalty\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 we\'92ll use them later.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Next, let\'92s consider high regularization. Set the L2 penalty to 1e11 and run your ridge regression to learn the weights of the simple model. Use the same parameters as above. Call your weights:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 simple_weights_0_penalty\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 we\'92ll use them later.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 14. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you have access to matplotlib, the following piece of code will plot the two learned models. (The blue line is for the model with no regularization and the red line is for the one with high regularization.)\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import matplotlib.pyplot as plt\
+%matplotlib inline\
+plt.plot(simple_feature_matrix,output,'k.',\
+        simple_feature_matrix,predict_output(simple_feature_matrix, simple_weights_0_penalty),'b-',\
+        simple_feature_matrix,predict_output(simple_feature_matrix, simple_weights_high_penalty),'r-')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you do not have access to matplotlib, look at each set of coefficients. If you were to plot \'91sqft_living\'92 vs the price, which of the two coefficients is the slope and which is the intercept?\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 15. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What is the value of the coefficient for sqft_living that you learned with no regularization, rounded to 1 decimal place? What about the one with high regularization?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 16. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Comparing the lines you fit with the with no regularization versus high regularization, which one is steeper?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 17. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Compute the RSS on the TEST data for the following three sets of weights:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls8\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The initial weights (all zeros)\cb1 \
+\ls8\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The weights learned with no regularization\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls8\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The weights learned with high regularization\cb1 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 18. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What are the RSS on the test data for each of the set of weights above (initial, no regularization, high regularization)?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 19. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Let us now consider a model with 2 features: [ \'91sqft_living\'92, \'91sqft_living_15\'92]. First, create Numpy version of your training and test data with the two features.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 model_features = ['sqft_living', 'sqft_living15']\
+my_output = 'price'\
+(feature_matrix, output) = get_numpy_data(train_data, model_features, my_output)\
+(test_feature_matrix, test_output) = get_numpy_data(test_data, model_features, my_output)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 20. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 First, let\'92s consider no regularization. Set the L2 penalty to 0.0 and run your ridge regression algorithm. Use the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls9\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 initial_weights = all zeros\cb1 \
+\ls9\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 step size = 1e-12\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls9\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 max_iterations = 1000\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Call the learned weights\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 multiple_weights_0_penalty\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 21. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Next, let\'92s consider high regularization. Set the L2 penalty to 1e11 and run your ridge regression to learn the weights of the simple model. Use the same parameters as above. Call your weights:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 multiple_weights_high_penalty\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 22. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What is the value of the coefficient for \'91sqft_living\'92 that you learned with no regularization, rounded to 1 decimal place? What about the one with high regularization?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 23. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Compute the RSS on the TEST data for the following three sets of weights:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls10\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The initial weights (all zeros)\cb1 \
+\ls10\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The weights learned with no regularization\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls10\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The weights learned with high regularization\cb1 \
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 24. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What are the RSS on the test data for each of the set of weights above (initial, no regularization, high regularization)?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+25. Predict the house price for the 1st house in the test set using the no regularization and high regularization models. (Remember that python starts indexing from 0.)\
+\pard\pardeftab720\sl420
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 26. 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What's the error in predicting the price of the first house in the test set using the weights learned with no regularization? What about with high regularization?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}

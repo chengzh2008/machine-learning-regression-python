@@ -1,0 +1,408 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl480\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Regression Week 4: Ridge Regression Assignment 1\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this assignment, we will run ridge regression multiple times with different L2 penalties to see which one produces the best fit. We will revisit the example of polynomial regression as a means to see the effect of L2 regularization. In particular, we will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use a pre-built implementation of regression to run polynomial regression\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use matplotlib to visualize polynomial regressions\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use a pre-built implementation of regression to run polynomial regression, this time with L2 penalty\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Use matplotlib to visualize polynomial regressions under L2 regularization\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Choose best L2 penalty using cross-validation.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Assess the final fit using test data.\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 We will continue to use the House data from previous assignments. (In the next programming assignment for this module, you will implement your own ridge regression learning algorithm using gradient descent.)\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 IMPORTANT: Choice of tools\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 For the purpose of this assessment, you may choose between GraphLab Create and scikit-learn (with Pandas). You are free to experiment with other tools (e.g. R or Matlab), but they may not produce correct numbers for the quiz questions.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you are using GraphLab Create, download the IPython notebook and follow the instructions contained in the notebook.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you are using Pandas+scikit-learn combination, follow through the instructions in this reading.\cb1 \
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data In SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ksL9zj3CltY9cGpCNbnwnqZBF2w83EtAum0cfnrGiS3aMdiYKqv7TC9G1BUdBq6XwNy6zj_yO4f-keWMvuVu4A.sRz23u2C25-4sLrA-1mXyA.blo25LPJXnWP3AeKoSUbrdWoqvjlDNVkEbHEFOvGMQro7qLh6yQOorGrjluM5PA2aZzBPWzPQGmMyJuYjZpeeFLn8JH1Gw6rTDnCnqPiy_DWPsCGQqF9eDupqnksLlYvKd_YBcpO6JSIJM3Sw4wHNX6TSkB-NXHxQXt7CNYycPfPLwgToyeFCdh_69WqJ-teIeNrYa0pEPxIreOk-iJZPowzu7uKGvJnBt0-OQ_aFQZtYro2Lr1Yb_BohwayDQFgGdr1cv5o80NRMUGLWN9kTEtrrpdTboFdWsAIhYlBW3NSICqnnbTMMqHY8MIw65n2vuzK5SrdIHoGuvDhog4HTLd71wXsWvS8sVaUsAZ6vHmVqGm_Hnz87_FnRZbWjz_5dliFcQI7hBmw4Ir9d226-FLI2RVB4p8O63ym6PxDvAyCoXCI9zDCn9W6jAaOC3jB"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.gl.zip}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/X6zjbuwe-lGxuAb6GRo9bLOEdlTwnhNFie3omXYfGt6-wYJjq52bT1jRUoluCtfn7OJ9uGbazyDy2D052YHLzQ.zHBJbVJ4sqRSXMSzfwIetA.eH_ddnWAdL0GVD2PbgV0AUKNrzOR8-avjNf3wJbvTi2h-eNfmople-zC3gEZ8tUPZVGk5HiqVqAXhKAlS3_lmJf8fA2lHEbrKPh1jv8IzJX7znN75WhceiJxstNl8W6ogvDhB22T9p_r8Gi3uFJWZUpFb2eqW0XFC4omehku0gd1ieAVKBnQ6nFvXxKTEe5Z3ow2YXLpeaPDC0QbvNF18t83GfXR6UXfnrHXdgAZycAfYJtgS7_1oRI2-xv-_BVvIjos8-JMo3LN_JbYHNygU5LaL9BD9Taq0dlPlN0SdM-lR4m2yeyeFy7mUVO7lZA2MUqRmYp5rpNe_pP73W0tsopyqKEzRlr7TW_SX4rx7msOBnTy9qBBCdyCO5BekJ0TAB83l9GXvYzSEAgqyRhClKKCt2CVVRuMQKz3Qy1vGnBBYzd-NCNW1X88Wojy8v_Xdoj1Kv4YBBOiWfCkxv6hkVq_yWF4nvox8cvIM-va0XIb0jxedPMXssc49wsKYVPO"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-4-ridge-regression-assignment-1-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls4\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/JByTCTE1jm2G0oo9YGgIoSJMy9giaNJQ5nfMyW3zzHT5iVc-QPiGJtTorclygfHu65NVMwihTzt5LplzwMx7VQ.sIt4YDejRVg9jKfckOUanA.Z7F1Cl77AyWvmM4uNEShcgsfhN3-7tJbjswNnpKisjZIqJoSj57at5QehqFBl1naMA3Ab-Pwc2iQzUDdaal4hTwiJYf319eFDV3JnlFUj5IlaOjJMg01I8nN3_7bsF-24zc2k_CTbgcyPa51hBWfCA1zldRF9RPqd48nM9ByRBBiETBP3HMmy32clRkc_DURRkg0gXmo2Wm4m4Pv9alLpcsqX_uDFUX5nFWSCu_psBMDxWr85pf7v9Au4qQAhY6nquFHxiwyW2a0d3-X423a3pI-VXwu4Wwhi0eQvBl9gPqTRukDQzUF4oCpGSmQsJSIaxejK1RRy5sOmucQByXDw2ICeNBZWBPzamZgGVB5Ul348BLfeLsKbd_snJZhZ8Wr55Ad1ZI6bEb1OspG_ngBJi8sG50mtfp4b-ZI8xr9V2qc0iyPI3rAVFkA9osToUDU"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/Ue8nyba0uo573_E58384oBtvrkSeqKjDRDW4lwnbeKl5fkmVoBPqefNCl5gSlr3THW8JLWrlIJnaJ936-cfc9A.KRlHWtGov-XMc1N2dyvySA.G5jQ3bcfGbyprnlZJJMgXqJt5DoL7vRu3BdO46IbLlWlKOmkbEaKkGY6sDqAgw6Yp-3K-zqJceJAm8-cskmmOdc-6QS5cm0i0ORKdBE_IEXvffMs_cCNzQ9Uo0DgoE7oa7aHlrV1sbJi-ChBVTNSuTh4XVrApPoxJ0xffa2Cv6zQmi57IfX3DwfYsCGEV6Z47nq_LIVaWhGlHFtTVCrrpCJWrr-WIgbVts_YuiGV8sjnYVc_4ZAySW-cbhvVT9NqmhIfi0x5A_LWVNK0qzolkk4gjypCbcglzBjLjUKGstQFZFf3FR4IpjcUBZZq_edMu-2WQAlxcSFAQfoQOyePrKYHoA_MTHzJXYWH6gh99smn8wFuMfZ1OnaqnANYlZk8obbgksgripFol6Xw8GQIBA70QopX4TdEseDaCJnwU9DjXObTnGK-_huP_qiqbeh9zLu9y8_lwW0ufXjjbzzHEQ"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_train_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales validation data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/J3_kuW8JAL_IWRa6qoUMVFXQkbDJxbEkNiMSNBU64zbr7e-ndDDByhH-u0to9kIx6wOYnY2T3Sx77InQtHxXqA.9b162mdllqV0d42wc9LIgA.R4ho_TYZSP1X8mO2DySPBxU7IcD93MlSjRyu7O32o14rQpXQ5Kl7ETunaBVM7jnfR6-CUgx0JcPpfJ9qNybVAphdrzpHOKSKTR1Sk1dAJ17hOI05K1Bqdy7nnpcjmkb7jztGr7c88TbjC37Q9cP0Vg8uhdz39j3yxbKVUz4NLuV8E-AUks2E-Y8jOFjuBif9s66M_GrFkTKGP4vpFNo4xFpbqiHcZZBdrnfNOsOoeuqrJ1RM4zn-TpST8p6zUugNPFbOYov89G0V8ZyvAr1eNVyu5fmp8uRkEm5eO9gxPu1EVlnIqdHmcMwJpQv3-qHBF4eGYdKyP72Z1ZO2MHhPkR3WHBwwGGppYaWwW0fpeIHb7PE4PiRKCIt90NRrtXXtkd9j3I0BWqJDv_7VDX_-tO2ihuQ_KW4vA7ypfYYxTyOHdD0VLbtBZCrrvWDi9_EtGfvI0jDx-SnXHDZRWxYQgQ"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_valid_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/hKC4_xgjFXb9Kcu2eQpppfklGRUhH78rVScHnubUst9rYn_QbARTjNrIuXixM2LiQgyUc45Ud52fuOBTy-qvGA.ti8ix6LCsWJnFVTH6bWbOg.Ikse3de3lebbtwaAf_qjmyxelYcdjHkTZXlJYcqITTPAwtb4sY5j9Bouo_kjO3lh5sb78-hxGdjhyi_l-9Vo4cNGHVsa3ouM4fmptDuBoXs_zrspLuP5gYvBiJnF2pWLOtYgiLRhZCjxRf3-xLPEc0rihmqsK_W9epGRPmVpAKB1RzSOmYUvOk5T8bpjpYhutAP8nBTJ0VLN2wVHJJzZYfQnbXO9YlcT_348UW7b5kMqqTFizCTRLfZ6InLe6CXL6oOqXiHF2MqcTboSnfZaMNTqbuyLo-_MustJcmEX5JIjndD80qLZhWdhc6KuiVZM_Ofhbj1WnHkDrG6dHdozTS7XZIdIWoQnwIn2as7azB4coj4O4JMyYIcHS0GYaqhvTmWLVv3uAmQRCpEhD8bKBpK9lDatvhmAJUQMn-TemzhbyCHVofa0V6_7o4tFcfBbg1bS3FNxsRBWe-j-0XCzuw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_test_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download csv file containing randomly shuffled rows of training and validation data combined:{\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/z18Vh4MT98E157eXfuvTQlCjTFAt1WsHbXH1cd1dnRVailNjML1Nc3rx3S3CYMftiqWTjZOra_kUfsnfFwA-iQ.i85Zag01lOI5Nts5bQhzVg.gLHHRTPZoKC8jILQGmez51xDcihwJ-Q5qFhjkq8ePtNGnc5e1f_Zx24vNkE1q3P9Rq3RC3hfx1qUQpIiP9lMnFDJGLx040R_ysH70A6uLd2uD9hrX9kz_MtgHXgK0xQLJ9xMs8Sp9jy45ZSnqwAm-pOQW1YJibO05Gt5UxLeNkyyNsmrv57CgGdErmEXqovQUuipU07kt_fEGwtnkHRbKTILPOJp_gkeE3wzYaHO5AQb_dlS_aV0cAlhhUNmiyrEUP0WpNfDzPJmziaW79_hDfh8-FNXxZ5cVw0rnzvTIY7y5giJKs9Kj1bb8z6asIU-4GGtSFJo_qha9Heswr2IxBqT_yRRlb01ueRefbhQ6LGBBMSFWDVwXqCA52JNlZBYQ_fcSvWrBYXmNXhr_5D04eGyOqTPqHVaNws9d_wOxJW2ontjZUSH_lMR3rpJy6sAuQ8uCpLV1Rpq5VgDpgvJipSSK_yzgOS1IFoXtKhVtlg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_train_valid_shuffled.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 1 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/UlySDFqhgBlAAD93ulOCGsTB2ut9zpRPRH4-r__T39djzUbtxPZfbxXFhpGhOaYUgsTobPH4NK91WnGLhZe9IQ.2ahYcpJ1cWqAlYYmK7205A.irqMP-TUDhgJUSU82Ot5cGHabArk21My7_sxKNviAreMUGu4ehCshCb3EA1EB9pHrlCpRGhUwDxOfdTN0VSJnn_eQXsG1emjt2pDfQKSdDKKtS-Om8M9hIZcZBOxEIy465oQhL-isQODXUAci_tOog-onfhsa8zFbqRelZeHvGCgU4CMslx5ZTIWm-FYEaccB1ILvPC4t3iQq8ViQkKXqaAtXWMsNhEbhwxW5lDSAlw07KcGM5jFsGh8cUwu_3ksQyJ_bomZjaXZUkCazHrBRwc6gXMqFlJ0H_Gqw8v1GRU256yTft_3sfCZAEigtuSyfdpbkuhHIDg7Vq4ocLFzlQQXLTDH2tABriYHsGZ_3pmkbDliVF8sHDz8zB_1ckQboYaw7SwiwKo9ma_NoIQCpBTHMFLsMO9rqhp-i_FYbKUQ3CySZII7Ahb5RUIgvkMbeuwZeMxrx48Gh__y1f-noQ"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_1_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 2 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/49CA9yTJfk4wV7QedDyAMg-tvIYsJ1xQLZ8qnw-Yq4ihCbAdZ40nF_Ot66Akpep6RWpFvsXDSJ4fhG7YBGqRfQ.-I_Xhud-weNtxqpVyw3lfQ.iRG6fsvqIvgKsd4XNJfteaDs3kiNw4ziTKiHyR_4thJ5fW0P_4kd02ik24hMvF8rW3t6MqPzx_GMaAckJGq4Hm20-GnNWKtCOLQ94eWjpFzXvgn86D56PQSI98dxWStukPUJ4PlGOxUQqx21txHOVdc5inicVad4QXLY4rYCwuLhpromr5_vgEwmjPmFjMPsrOxZa1iEbvhuRAcOn4JRG1OINzdYvs6KLosyhWNfCqv2GRSma3iCVqzuwdHfKBRXrxiT7jPxliqw4Dsjokj57-Bdsj_mGOJBKhSuozIWV3vacDL28-FhnuKuJE6WJaT-rGL0XoxiEQvE08-4MzNLyg5NLtvK8FxA1JbYFWRAkUIqRFbP25JZFxo10y3v3pjQkeXJY6sDNDuCe9esKchIt3NesuYfNevpfmiLczqHG2Ia2ORiRflQKsRONFdrhyDuTSPrB39v5yNgPly1nEB8zg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_2_data.csv}}\cb1 \
+\ls4\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 3 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/hayi4AIGE3_IbEi9hMEydtFHCMEZOzIlyhRNG839g3JK0BKi6w83wc7t3BacDPjfVAAkof8nIfiJmNOpXSafcQ.ZC6-_vRsaxSziejZ41CKYw.luyiGgQYGG1hmriyc8UJ1tA4thVoRVrzIzUm0m41A9rwYAWEHko9yEB5L8nUeaAJsWJihyY-AJmdJWo5dvGdQWwvzwEqb73gw2G9Yo9gVtd6zsjVQiNpH1YfQF3doVcAF6X44Pk7pqIWVJJGuHeRJN0YE743VvSsYCRS8Dsajm8AMmeXD-pH4yeB1YfpO0k9euPe07pVjATmhixYozdUGRZHFoHfGHQ2F7t5fr2fTGGbHzbZ2taWrhJHPiBUW1MUXdlPEhf2BVxDSckV-oSMzUFn7kZfdsJ5ft7yQjoO5U98rzglGH_Ui7NNpKyh6Do-h-4Z-YmmXw9UPDySQdSBfSzK12rhy24fIwjV3zQbexlOAIf3grvYVO3_AJcI0TiaECSKvCqmyoULrNE9cTc94Yu5f6yM6S6Nu7BiZQZJxNDY00goPGRsoS1PembrgIG82PlIqGRGpG3huGscmy1EGw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_3_data.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales subset 4 data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/99mVrgDEv4KWUfW7EROBbU-Yet6fKGYuZTIhpv5uDhhk5a7a4kF4hQ8MUgcgKbW9Ydics_ck8apP4vwmGVqJXg.Zgzh9hM1KLYHCDGxatrF5g.p3ZS12r70RiLXUWf4SE9AGXid8KTSMl1NZewJ_HkVzI5QEXmdPvLGFmzPdxfNzeEZqt9iUux4qxb-WMQlFultD2rcDreeSmR-V39yrOGjmCBs5l_Cp3vYGU02_IJhj4n5mKqZoaWwq_J70h2Hjlm6L3KCHGXP3CiqmLuTBNwEfQ9ZkBpFA0L7UhTOC6B03qtAwxh5hNvqO9LznyqCblMJrKLMmETuOu39DGnGDIKlQO0HXLR4lZGUugZwKcPR_oCm4ij7Y85UyyDaJSiPifI8n7_o_BRrUGPzouspg0zXvn3-6qBZWN7TiAXELF-oQFsZ52Ftfokz5TMsblLlxo0FU5B4vpLk5mz50-O9nxFLDzRpMm-Qn9fdWTwenWpjIf0812UteS9T77f04P8SO2FrU_zULls0Bx_E5llRImky89WGVbnc6SVoCmTQPkJAUKWlbCqubpH5TVV7bqmO-l72A"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_set_4_data.csv}}\cb1 \
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1 (Simple Regression).\
+If you are following the IPython Notebook and/or are new to numpy, then you might find the following tutorial helpful: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/Iosy_h4DBabCAd_yWURdOe99-7U8Jbw8ZbNoT7sHCnVCxXgAhYwiaeJRocDkWd86cFiJL63AwmYL3siHQfYNMw.ldcd4k6Zz0Re-MLlV3dJug.Vt86e1mfzNMoZ0xbqUHnYey8EI6qHEA--qKAExOfUzQSW4X9tfe5nkj-gY-Dwvo8vEP5YQ3p1dPcQVmZb8lFnLr8gRmoluNILr114w01y_UlqHazYuQoNNmh3x5bU2rt9hsMx8Sko9qefCXor7Z4lcWdHYdMwYmoyf4RkMMqv5bfIu0UdqGqcIfrZstkSxBo_fCx2Ti_iT2TMmDifeqftzKjgo_S8243k40ch1e5KihE-G5-tBC-yH-p0iqZ3ELoXdyIkWcSEQBAxwkI6mhbwGgBiMF2-A0cQ4FIBNRWSyRFojpQ7F8kSxMVLTfsfsBGWVQj7Zv_xkoAlYRUD0B0NnRPb1_y9qPUTsSYxObj0kBKqCn881fcoORgMKXTk-JO3zwYqUjufrLrci1JNaXwHP7wrhNVBx0h1oDYtiWGHpbpV2sxG-jJHMwA6XFUX71k"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 numpy-tutorial.ipynb}}\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create and the companion IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Open the companion IPython notebook and follow the instructions in the notebook.\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using scikit-learn with Pandas\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Copy and paste an equivalent of \'91polynomial_sframe\'92 function from Module 3 (Polynomial Regression). This function accepts an array \'91feature\'92 (of type pandas.Series) and a maximal \'91degree\'92 and returns an data frame (of type pandas.DataFrame) with the first column equal to \'91feature\'92 and the remaining columns equal to \'91feature\'92 to increasing integer powers up to \'91degree\'92.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  For the remainder of the assignment we will be working with the house Sales data as in Module 3 (Polynomial Regression). Load in the data and also sort the sales data frame by \'91sqft_living\'92. When we plot the fitted values we want to join them up in a line and this works best if the variable on the X-axis (which will be \'91sqft_living\'92) is sorted. For houses with identical square footage, we break the tie by their prices.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import pandas as pd\
+\
+dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':float, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\
+sales = pd.read_csv('kc_house_data.csv', dtype=dtype_dict)\
+sales = sales.sort(['sqft_living','price'])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Let us revisit the 15th-order polynomial model using the 'sqft_living' input. Generate polynomial features up to degree 15 using `polynomial_sframe()` and fit a model with these features. When fitting the model, use an L2 penalty of 1.5e-5:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 l2_small_penalty = 1.5e-5\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note: When we have so many features and so few data points, the solution can become highly numerically unstable, which can sometimes lead to strange unpredictable results. Thus, rather than using no regularization, we will introduce a tiny amount of regularization (l2_penalty=1.5e-5) to make the solution numerically stable. (In lecture, we discussed the fact that regularization can also help with numerical stability, and here we are seeing a practical example.)\
+With the L2 penalty specified above, fit the model and print out the learned weights. Add "alpha=l2_small_penalty" and "normalize=True" to the parameter list of linear_model.Ridge:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 from sklearn import linear_model\
+import numpy as np\
+\
+poly15_data = polynomial_sframe(sales['sqft_living'], 15) # use equivalent of `polynomial_sframe`\
+model = linear_model.Ridge(alpha=l2_small_penalty, normalize=True)\
+model.fit(poly15_data, sales['price'])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What\'92s the learned value for the coefficient of feature power_1?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Observe Overfitting\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 5. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Recall from Module 3 (Polynomial Regression) that the polynomial fit of degree 15 changed wildly whenever the data changed. In particular, when we split the sales data into four subsets and fit the model of degree 15, the result came out to be very different for each subset. The model had a high variance. We will see in a moment that ridge regression reduces such variance. But first, we must reproduce the experiment we did in Module 3.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 6. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 For this section, please download the provided csv files for each subset and load them with the given list of types:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 # dtype_dict same as above\
+set_1 = pd.read_csv('wk3_kc_house_set_1_data.csv', dtype=dtype_dict)\
+set_2 = pd.read_csv('wk3_kc_house_set_2_data.csv', dtype=dtype_dict)\
+set_3 = pd.read_csv('wk3_kc_house_set_3_data.csv', dtype=dtype_dict)\
+set_4 = pd.read_csv('wk3_kc_house_set_4_data.csv', dtype=dtype_dict)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Just as we did in Module 3 (Polynomial Regression), fit a 15th degree polynomial on each of the 4 sets, plot the results and view the weights for the four models. This time, set\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 l2_small_penalty=1e-9\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 and use this value for the L2 penalty. Make sure to add "alpha=l2_small_penalty" and "normalize=True" to the parameter list of linear_model.Ridge.\
+The four curves should differ from one another a lot, as should the coefficients you learned.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 8. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: For the models learned in each of these training sets, what are the smallest and largest values you learned for the coefficient of feature power_1?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  (For the purpose of answering this question, negative numbers are considered "smaller" than positive numbers. So -5 is smaller than -3, and -3 is smaller than 5 and so forth.)\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Ridge regression comes to rescue\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 9. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Generally, whenever we see weights change so much in response to change in data, we believe the variance of our estimate to be large. Ridge regression aims to address this issue by penalizing "large" weights. (The weights looked quite small, but they are not that small because 'sqft_living' input is in the order of thousands.)\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Fit a 15th-order polynomial model on set_1, set_2, set_3, and set_4, this time with a large L2 penalty. Make sure to add "alpha=l2_large_penalty" and "normalize=True" to the parameter list, where the value of l2_large_penalty is given by\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 l2_large_penalty=1.23e2\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 These curves should vary a lot less, now that you introduced regularization.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 QUIZ QUESTION: For the models learned with regularization in each of these training sets, what are the smallest and largest values you learned for the coefficient of feature power_1?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 (For the purpose of answering this question, negative numbers are considered "smaller" than positive numbers. So -5 is smaller than -3, and -3 is smaller than 5 and so forth.)\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Selecting an L2 penalty via cross-validation\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 12. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Just like the polynomial degree, the L2 penalty is a "magic" parameter we need to select. We could use the validation set approach as we did in the last module, but that approach has a major disadvantage: it leaves fewer observations available for training. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Cross-validation
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  seeks to overcome this issue by using all of the training set in a smart way.\
+We will implement a kind of cross-validation called k-fold cross-validation. The method gets its name because it involves dividing the training set into k segments of roughtly equal size. Similar to the validation set method, we measure the validation error with one of the segments designated as the validation set. The major difference is that we repeat the process k times as follows:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Set aside segment 0 as the validation set, and fit a model on rest of data, and evalutate it on this validation set\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Set aside segment 1 as the validation set, and fit a model on rest of data, and evalutate it on this validation set\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ...\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Set aside segment k-1 as the validation set, and fit a model on rest of data, and evalutate it on this validation set\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 After this process, we compute the average of the k validation errors, and use it as an estimate of the generalization error. Notice that all observations are used for both training and validation, as we iterate over segments of data.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To estimate the generalization error well, it is crucial to shuffle the training data before dividing them into segments. We reserve 10% of the data as the test set and randomly shuffle the remainder. Le'ts call the shuffled data 'train_valid_shuffled'.\
+For the purpose of this assignment, let us download the csv file containing pre-shuffled rows of training and validation sets combined: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/z18Vh4MT98E157eXfuvTQlCjTFAt1WsHbXH1cd1dnRVailNjML1Nc3rx3S3CYMftiqWTjZOra_kUfsnfFwA-iQ.i85Zag01lOI5Nts5bQhzVg.gLHHRTPZoKC8jILQGmez51xDcihwJ-Q5qFhjkq8ePtNGnc5e1f_Zx24vNkE1q3P9Rq3RC3hfx1qUQpIiP9lMnFDJGLx040R_ysH70A6uLd2uD9hrX9kz_MtgHXgK0xQLJ9xMs8Sp9jy45ZSnqwAm-pOQW1YJibO05Gt5UxLeNkyyNsmrv57CgGdErmEXqovQUuipU07kt_fEGwtnkHRbKTILPOJp_gkeE3wzYaHO5AQb_dlS_aV0cAlhhUNmiyrEUP0WpNfDzPJmziaW79_hDfh8-FNXxZ5cVw0rnzvTIY7y5giJKs9Kj1bb8z6asIU-4GGtSFJo_qha9Heswr2IxBqT_yRRlb01ueRefbhQ6LGBBMSFWDVwXqCA52JNlZBYQ_fcSvWrBYXmNXhr_5D04eGyOqTPqHVaNws9d_wOxJW2ontjZUSH_lMR3rpJy6sAuQ8uCpLV1Rpq5VgDpgvJipSSK_yzgOS1IFoXtKhVtlg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 wk3_kc_house_train_valid_shuffled.csv}}. In practice, you would shuffle the rows with a dynamically determined random seed.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_valid_shuffled = pd.read_csv('wk3_kc_house_train_valid_shuffled.csv', dtype=dtype_dict)\
+test = pd.read_csv('wk3_kc_house_test_data.csv', dtype=dtype_dict)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 14. D
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ivide the combined training and validation set into equal segments. Each segment should receive n/k elements, where n is the number of observations in the training set and k is the number of segments. Since the segment 0 starts at index 0 and contains n/k elements, it ends at index (n/k)-1. The segment 1 starts where the segment 0 left off, at index (n/k). With n/k elements, the segment 1 ends at index (n*2/k)-1. Continuing in this fashion, we deduce that the segment i starts at index (n*i/k) and ends at (n*(i+1)/k)-1.\
+With this pattern in mind, we write a short loop that prints the starting and ending indices of each segment, just to make sure you are getting the splits right.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 n = len(train_valid_shuffled)\
+k = 10 # 10-fold cross-validation\
+\
+for i in xrange(k):\
+    start = (n*i)/k\
+    end = (n*(i+1))/k-1\
+    print i, (start, end)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Let us familiarize ourselves with array slicing with Pandas. To extract a continuous slice from a DataFrame, use colon in square brackets. For instance, the following cell extracts rows 0 to 9 of train_valid_shuffled. Notice that the first index (0) is included in the slice but the last index (10) is omitted.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_valid_shuffled[0:10] # select rows 0 to 9\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If the observations are grouped into 10 segments, the segment i is given by\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 start = (n*i)/10\
+end = (n*(i+1))/10\
+train_valid_shuffled[start:end+1]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Meanwhile, to choose the remainder of the data that's not part of the segment i, we select two slices (0:start) and (end+1:n) and paste them together.\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 train_valid_shuffled[0:start].append(train_valid_shuffled[end+1:n])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 15. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now we are ready to implement k-fold cross-validation. Write a function that computes k validation errors by designating each of the k segments as the validation set. It accepts as parameters (i) k, (ii) l2_penalty, (iii) dataframe containing input features (e.g. poly15_data) and (iv) column of output values (e.g. price). The function returns the average validation error using k segments as validation sets. We shall assume that the input dataframe does not contain the output column.\
+For each i in [0, 1, ... k-1]:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute starting and ending indices of segment i and call 'start' and 'end'\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Form validation set by taking a slice (start:end+1) from the data.\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Form training set by appending slice (end+1:n) to the end of slice (0:start).\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Train a linear model using training set just formed, with a given l2_penalty\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute validation error (RSS) using validation set just formed\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def k_fold_cross_validation(k, l2_penalty, data, output):\
+    ...\
+    return [average validation error]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 16. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Once we have a function to compute the average validation error for a model, we can write a loop to find the model that minimizes the average validation error. Write a loop that does the following:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls7\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 We will again be aiming to fit a 15th-order polynomial model using the sqft_living input\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 For each l2_penalty in [10^3, 10^3.5, 10^4, 10^4.5, ..., 10^9] (to get this in Python, you can use this Numpy function: np.logspace(3, 9, num=13).): Run 10-fold cross-validation with l2_penalty.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls7\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Report which L2 penalty produced the lowest average validation error.\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Note: since the degree of the polynomial is now fixed to 15, to make things faster, you should generate polynomial features in advance and re-use them throughout the loop. Make sure to use train_valid_shuffled when generating polynomial features!\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 17. Quiz Question: What is the best value for the L2 penalty according to 10-fold validation?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 18. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Once you found the best value for the L2 penalty using cross-validation, it is important to retrain a final model on all of the training data using this value of l2_penalty. This way, your final model will be trained on the entire dataset.\
+\pard\pardeftab720\sl420
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 19. Quiz Question: Using the best L2 penalty found above, train a model using all training data. What is the RSS on the TEST data of the model you learn with this L2 penalty?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
