@@ -1,0 +1,503 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red53\green118\blue190;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid701\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl480\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Predicting house prices using k-nearest neighbors regression\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this notebook, you will implement k-nearest neighbors regression. You will:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Find the k-nearest neighbors of a given query input\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Predict the output for the query input using the k-nearest neighbors\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Choose the best value of k using a validation set\cb1 \
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are doing the assignment with IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 An IPython Notebook has been provided to you below for this quiz. This notebook contains the instructions, quiz questions and partially-completed code for you to use, as well as some cells to test your code.\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you need to download\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls2\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data in SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/FUZs-1v_9yDRWtBZLj_x0UCcYMbupcwV0C_ZU0-Bp0zhrpWuxeuMbD11LsnFnvWrb6L-P-plqbNezVOLXbM2ow.E_mXJGB2lX-oX5KSkSHajw.AGZCgaejobdjMItPR56-u2mj6UjP0dR0CFdidCk2a85Jm8qFBAfDTGB0ZOKahdiyxgtkzoVztJtlcvh4J2AqAgY5YXp7QEnCfufjKTdNu5yxO0nA_DGtahOwIm2I9L9oAKJXsBhovihAnwTZ4M34FRCzwy1bXw3SXiEQd9_WMHQxTGTQaHYd_vPvMszRjoAOAXMv_6ETsLCtVx2zSmnbymhdjfI0oNvi7AbXhTJJlCXh59FCzmGxv-NZjEGQNPOwL2f8OBd7ufyGcRiWIVw7AXuPzTWxKGb3XM6uT_HnsuBTJgRAax90QYKO9C5ImaIyVJ5tkY-RuuO8wFu59B8gSZD0AloSkqx87e1yP_dQlXVaBLiIB8dAfSShU4-H_uxuCts3uwCY7vg3hqooGX6L1w19NSa5huwv3QrB13_2TVmWO6ccvc-Q8m60n-ycE_Y1"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data_small.gl.zip}}. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Notice the _small postfix.
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the companion IPython Notebook: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/XQamT-AurSWpPyUbJHmUnvx00-xvB6c_Y0eK7D5IIS2vHoxzRNI5A0kxvxGZG21ebutN1DVn3VdztQs7T79OYQ.JLawJ6seHGiSejtdgRUAXA.CeI-gN_R0lCTDhFzBdKzpJ9uuJRIak_5M87FAPNojepoiAx8SQINT75He9X5wBmYmplAPac_CdWVIa5bcLCUuAzGmXK6-FauEsXFVFtbeeZQclKkPsI8yfVZ6sFytJrBfboRx4EtszPpl5ktTh_CI187Xl3d9Sl13zGKZiQw9oB49E8z1iV6jW2ZMSXmW1uGE1D8mXGg1WgCX4JxEVZm-k1UVvsFHQalBKwglTusEqT3qS9Zy9X6wRVWNxuRE7BnZzzWZDmg3Q0sSUI8ovMP_eo2uQYokPeeufns3RU2zYLLe5MvXbsSirAC1JXAxm6Ehd9R6ea3UHVKbYcQNTAeLI5eyyrOk1tU3RY7Rcx4VKfA9JO-zyl7p7seNmhBv0nuzQp9FAYLsa1jwAbMLywF7aQ5GBxy39d6aV-KkjPHGoSgUlNhNLc67Jz9ZutpaxVhAh90MDruKc41_WRXD8WG4mqRqQr5l7oQ3HGapGQLXJg5eNPWbyw1tfHdsnI-O0rw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 week-6-local-regression-assignment-blank.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling IPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are not using GraphLab Create\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls3\ilvl0
+\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/bd1cbzIJ0Ny84ewHdk3pa-B4Ip4CFm6ItjrVxXOXNQokSoTnjA00T0niWUbJxMnvsuK2Qhy_T-UKe3zrNN3zwg.AuoTuYWkMdeQEx5yOkQYjA.QNfvScfaG_Z_PuASAcRKV_k2sp2ENJw_IAfmjvb_wsLyhINDO8GkzUb9m2nj61C1_iRa8X6MNQReJqneYRXIVnZpIRYlpSRzrCaaYQJE2rxU6_wnmdVLknyOIrdF_F6KSug8E1AyGGG0dGqWwJt9Y1JKk1xmbbepR3NkYGe-iA30FvJE7NI1WhgClnif6pPrl8uEQ20qlutHI5eHFGfCLxUVF0Yefpt9x2jcGRbA8LUWsZR4NeMzc95bdPrWXrCaOnNoaAa13W74SiHfQVt-WjpyQVDdibcFKykJ7n8VhcOiqoBaHlRbiheu00HxOn1aSYB_-bxV95MZrMnnZUPcC6i1xh0MIhMU04si4gDdD73sfuZed92SiaY6pUfUQWbP3gREx2Uojjw-JwpT4Z11LR-qeyCvldSvTU_YafnOzv7NiItzEZOVa8hX98PwYmRKDJBwWwrklmfZRnrr7_ng6A"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data_small.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales training data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/hPIllxgc5hRxuUmMd3-MxtW2_SGrXKe92binztXJrvJeIkUs_RE-KCtSMLD1huagShpNYKrA-HRT8_XhTihk4w.r8DxRtIt9mgMfkzrkbbwFg.1VEvsREOCVySBiMl4oET3-bKYQC85cu8DefQmg9XesV3h7Ob0RxvzoTGweKBQDS7uy1AVcyCrSSIZBpQ6B-GxdZeZlVlPUMGMZvIdFQTa8mpHyS-6hr7n69sXrT_ss9sJFJl-UR2T7j9ZAu0YuUihHhqxZTPaLgZyXbFB_lqT6s0qHBtgDvWPsfg_rfomD6Fp0x8DqmWmvOx-q6Q2noSeAxATFTx4JmQJqvFJsvggH7aleGjGa4BNx3n6caaJDRn6izWYgWZ87Aooaurl1SuJI61fsAldvBBBEzCeXiIjO4T-mqLUXQseev37rXbZ1sL4jz9npljiIn1DMprFKrHDBlit4r5TSz12VuXCFlgyvne-Wn-pGrRfL9sXrO8WN9bMa82hMqyL2plr-nSYuMBRMF1Duz7y4B-r8WQlnnYHSxVKc3Tszbeye7TojQVL_g9Gb_qar9y35GzxY7qiUB0mg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data_small_train.csv}}\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales testing data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/WMrUYrg6Vi63apKq2Rl89knzUNakrJy2HlzrOpWIb9yO0aKheGrOs-hthaQvv-mx-X-f1K3kUwy3cuHfyHV0VA.gaEz9WwCOD_57oW8fWVwbQ.-cZ3Hl3W9_LjHh9rPxTFB0Zx5H4EEHPKdbRKoUxY4FYR1u7h_ddX1UK8tWxryN9NKl4GUjEe4fuXKvfks53WDbXtzJgKvKqhWGwf5iZ8BhAEGP-sYEdZbBhIULF9dO35sGswt8glN1OKgcA0Hg90HUYzF8KuSAoDMFnJv0ZA6Xyb6u8u6ndsxgK6i1dL-XBL6cX9V8auZFy8Ix61dZ1_uBxSRKI_AXbbKFBzJBEK3JxrIEYLQXmBAgY-YTEvZKNRRnVtbRAHSDarxYDQVfpsgty-BQIoVr2Pg_43n9xBTMv8N4tl29NbIBmwfTOXkh722hqXUgHM-R4MeBi3pmvqOiA1YUy7i9sebGuT1iha7DDkVZp4W7zZmcjbJFxPQ3_znHrnLgPFzQGp1kbzGQCVS9qQBEKMaI4z5olMzsTOUiExww31jhVbK70q2ij6hdg49Nv4vA4ZaRp-oJjYzxJegw"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data_small_test.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the King County House Sales validation data csv file: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/0Fjo-S5PmDH8OnxZT8SWui5IYCLdptERdySDSZe6wZiA4MZye8VlM0Ffq6VFFmaqeAl7cmRz9HFziaNebjI13g.5IvQ9Mu9ylhYJzt1choeqA.19zvR5jbafcoGcHHG3phZAkXP1-pWDRgZ8Dp4mvjUNY8GUCJMWrdWHsm6PqDueS31rfDbgE24sI4FaMFOMuP_Qi6JEmWSb50b_qDllHYTXv1nRZ-8C9sjE3iJAJu7WQRDqGo7keyum90XOb9J3kHLR5O9Ark_Kxemr2IxyjH6GURCekbaBnnSmkGFY3zX65mwIUF5nWgJNBmsPF0rHcGU2uK6h6PekosPD3ccLHDXPch-bwvu_kaDN-Sf_HZtDYVC_Vpujdh9frwNUKOursImRRa6LUJQgkGPujPcSpPefaASW6lXbJTHeZClQjMZkuwHS6OfJlg-9uLXpqm3FeKwkSbb2lt9WAkyKmAuEibQfZTpK760umEA73hTJT2Jdz9LBYva8xjkr82VDdEeSvCp28qbXj-fgR6BWUMDO-uUOHrP80aWKbIs-DHRX3poX5w4Z1KXoEEUMSp3NiCQBavbCkSIElW9UWUx3BaM1mmHcA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 kc_house_data_small_validation.csv}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls4\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 IMPORTANT: use the following types for columns when importing the csv files. Otherwise, they may not be imported correctly: [str, str, float, float, float, float, int, float, int, int, int, int, int, int, int, int, str, float, float, float, float]. If your tool of choice requires a dictionary of types for importing csv files (e.g. Pandas), use:
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 dtype_dict = \{'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_living15':float, 'grade':int, 'yr_renovated':int, 'price':float, 'bedrooms':float, 'zipcode':str, 'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':float, 'condition':int, 'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int\}\
+\pard\pardeftab720\sl480\sa320
+
+\f0\fs44 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Useful resources\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You may need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1 (Simple Regression).\
+If you are following the IPython Notebook and/or are new to numpy, then you might find the following tutorial helpful: numpy-tutorial.ipynb\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you are using GraphLab Create and the companion IPython Notebook\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Open the companion IPython notebook and follow the instructions in the notebook.\
+\pard\pardeftab720\sl480\sa320
+
+\fs44 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If instead you are using other tools to do your homework\
+\pard\pardeftab720\sl420\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome to write your own code and use any other libraries, like Pandas or R, to help you in the process. If you would like to take this path, follow the instructions below.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using SFrame, import GraphLab Create and load in the house data as follows:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 sales = graphlab.SFrame('kc_house_data_small.gl/')\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Split the data into training, test, and validation sets as follows:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 (train_and_validation, test) = sales.random_split(.8, seed=1)\
+(train, validation) = train_and_validation.random_split(.8, seed=1)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you are not using SFrame, load all three csv files listed in \'93What you need to download\'94..\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you\'92re using Python: To do the matrix operations required to perform k nearest neighbors, we will be using the popular python library \'91numpy\'92 which is a computational library specialized for operations on arrays. For students unfamiliar with numpy we have created a numpy tutorial (see \'93Useful resources\'94). It is common to import numpy under the name \'91np\'92 for short. To do this, execute:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 import numpy as np\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To efficiently compute pairwise distances among data points, we will convert the SFrame (or dataframe) into a 2D Numpy array. First import the numpy library and then copy and paste get_numpy_data() (or equivalent). The function takes a dataset, a list of features (e.g. [\'91sqft_living\'92, \'91bedrooms\'92]) to be used as inputs, and a name of the output (e.g. \'91price\'92). It returns a \'91features_matrix\'92 (2D array) consisting of a column of ones followed by columns containing the values of the input features in the data set in the same order as the input list. It also returns an \'91output_array\'92, which is an array of the values of the output in the dataset (e.g. \'91price\'92).\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def get_numpy_data(data_sframe, features, output):\
+    ...\
+    return (feature_matrix, output_array)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Similarly, copy and paste the normalize_features function (or equivalent) from Module 5 (Ridge Regression). Given a feature matrix, each column is divided (element-wise) by its 2-norm. The function returns two items: (i) a feature matrix with normalized columns and (ii) the norms of the original columns.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def normalize_features(features):\
+    ...\
+    return (normalized_features, norms)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Using get_numpy_data (or equivalent), extract numpy arrays of the training, test, and validation sets.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 6. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In computing distances, it is crucial to normalize features. Otherwise, for example, the \'91sqft_living\'92 feature (typically on the order of thousands) would exert a much larger influence on distance than the \'91bedrooms\'92 feature (typically on the order of ones). We divide each column of the training feature matrix by its 2-norm, so that the transformed column has unit norm.\
+IMPORTANT: Make sure to store the norms of the features in the training set. The features in the test and validation sets must be divided by these same norms, so that the training, test, and validation sets are normalized consistently.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 features_train, norms = normalize_features(features_train)\
+features_test = features_test / norms\
+features_valid = features_valid / norms\
+\pard\pardeftab720\sl480\sa240
+
+\f0\fs40 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute a single distance\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 7. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To start, let's just explore computing the \'93distance\'94 between two given houses. We will take our query house to be the first house of the test set and look at the distance between this house and the 10th house of the training set.\
+To see the features associated with the query house, print the first row (index 0) of the test feature matrix. You should get an 18-dimensional vector whose components are between 0 and 1. Similarly, print the 10th row (index 9) of the training feature matrix.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 print features_test[0]\
+print features_train[9]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 8. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What is the Euclidean distance between the query house and the 10th house of the training set?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+Note: Do not use the \'91np.linalg.norm\'92 function; use \'91np.sqrt\'92, \'91np.sum\'92, and the power operator (**) instead. The latter approach is more easily adapted to computing multiple distances at once.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 9. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Of course, to do nearest neighbor regression, we need to compute the distance between our query house and
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 all
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  houses in the training set.\
+To visualize this nearest-neighbor search, let's first compute the distance from our query house (features_test[0]) to the first 10 houses of the training set (features_train[0:10]) and then search for the nearest neighbor within this small set of houses. Through restricting ourselves to a small set of houses to begin with, we can visually scan the list of 10 distances to verify that our code for finding the nearest neighbor is working.\
+Write a loop to compute the Euclidean distance from the query house to each of the first 10 houses in the training set.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 10. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Among the first 10 training houses, which house is the closest to the query house?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 11. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 It is computationally inefficient to loop over computing distances to all houses in our training dataset. Fortunately, many of the numpy functions can be vectorized, applying the same operation over multiple values or vectors. We now walk through this process. (The material up to #13 is specific to numpy; if you are using other languages such as R or Matlab, consult relevant manuals on vectorization.)\
+Consider the following loop that computes the element-wise difference between the features of the query house (features_test[0]) and the first 3 training houses (features_train[0:3]):\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 for i in xrange(3):\
+    print features_train[i]-features_test[0]\
+    # should print 3 vectors of length 18\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The subtraction operator (-) in numpy is vectorized as follows:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 print features_train[0:3] - features_test[0]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note that the output of this vectorized operation is identical to that of the loop above, which can be verified below:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 # verify that vectorization works\
+results = features_train[0:3] - features_test[0]\
+print results[0] - (features_train[0]-features_test[0])\
+# should print all 0's if results[0] == (features_train[0]-features_test[0])\
+print results[1] - (features_train[1]-features_test[0])\
+# should print all 0's if results[1] == (features_train[1]-features_test[0])\
+print results[2] - (features_train[2]-features_test[0])\
+# should print all 0's if results[2] == (features_train[2]-features_test[0])\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Aside: it is a good idea to write tests like this snippet whenever you are vectorizing a complicated operation.\
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Perform 1-nearest neighbor regression\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 12. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now that we have the element-wise differences, it is not too hard to compute the Euclidean distances between our query house and all of the training houses. First, write a single-line expression to define a variable \'91diff\'92 such that \'91diff[i]\'92 gives the element-wise difference between the features of the query house and the i-th training house.\
+To test your code, print diff[-1].sum(), which should be -0.0934339605842.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 13. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The next step in computing the Euclidean distances is to take these feature-by-feature differences in \'91diff\'92, square each, and take the sum over feature indices. That is, compute the sum of squared feature differences for each training house (row in \'91diff\'92).\
+By default, \'91np.sum\'92 sums up everything in the matrix and returns a single number. To instead sum only over a row or column, we need to specifiy the \'91axis\'92 parameter described in the np.sum documentation. In particular, \'91axis=1\'92 computes the sum across each row.\
+So\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 np.sum(diff**2, axis=1)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 computes this sum of squared feature differences for all training houses. Verify that the two expressions\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 np.sum(diff**2, axis=1)[15]\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 and\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 np.sum(diff[15]**2)\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 yield the same results. That is, the output for the 16th house in the training set is equivalent to having examined only the 16th row of \'91diff\'92 and computing the sum of squares on that row alone.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 14. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 With this result in mind, write a single-line expression to compute the Euclidean distances from the query to all the instances. Assign the result to variable distances.\
+Hint: don't forget to take the square root of the sum of squares.\
+Hint: distances[100] should contain 0.0237082324496.\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 15. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now you are ready to write a function that computes the distances from a query house to all training houses. The function should take two parameters: (i) the matrix of training features and (ii) the single feature vector associated with the query.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def compute_distances(features_instances, features_query):\
+    ...\
+    return distances\
+\pard\pardeftab720\sl420\sa280
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 16. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Take the query house to be third house of the test set (features_test[2]). What is the index of the house in the training set that is closest to this query house?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 17. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What is the predicted value of the query house based on 1-nearest neighbor regression?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Perform k-nearest neighbor regression\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 18. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Using the functions above, implement a function that takes in\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the value of k;\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature matrix for the instances; and\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature of the query\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 and returns the indices of the k closest training houses. For instance, with 2-nearest neighbor, a return value of [5, 10] would indicate that the 6th and 11th training houses are closest to the query house.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def k_nearest_neighbors(k, feature_train, features_query):\
+    ...\
+    return neighbors\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Hint: look at the {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/vU3iJhUn0MXqRK4zWwxC9gudtG2E_HCvW9Aih6YyRl91JXVYrDx9jiPXU9p_m2DCtKOagfUAWphFnCYslcWeCw._WOfWHLrW-yvHgRB6NWUAQ.xBwjS1teTzBCdkpSlxhoMdQ8ZLizp8D0DnZLCaHtTx2xidWNTWcVJLCX2mu6JEb2qeQ7LzR_9RAE00Sb9exlpcuuAKFkF7cwwSuXnjvMN1E93f-tN17aZhr_S_yNnWdn-kF10CfNqM-f3HLQ2IaZjlHESldsZRFGRj11XdPEVU51OOyE8slYuRfl-SyOTqY7nB6zdGqaCo7rqwqBSndMKTs0EDNRsAv8gk8qnrgBDvECFOQEgJ098OGzCnPuoBc78pYhkT6apC1H77u-jUOaAB7iEwat5fcxlyVGHg7274731qwXAcqg-wIF5ji0CgU4sUwcKPMLplhj6_qjhDA-evI-V4UaC-qxOm1rKNPWSfDPXqXZH1CEg5vnIgCApgX8vu4vIXUvXISUNw2eMyyqFA"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 documentation for np.argsort}}.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 19. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Take the query house to be third house of the test set (features_test[2]). What are the indices of the 4 training houses closest to the query house?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 20. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now that we know how to find the k-nearest neighbors, write a function that predicts the value of a given query house. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 For simplicity, take the average of the prices of the k nearest neighbors in the training set.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  The function should have the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls6\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the value of k;\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature matrix for the instances;\cb1 \
+\ls6\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the output values (prices) of the instances; and\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls6\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature of the query, whose price we\'92re predicting.\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The function should return a predicted value of the query house.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def predict_output_of_query(k, features_train, output_train, features_query):\
+    ...\
+    return prediction\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Hint: you can extract multiple items from a numpy array using a list of indices. For instance, output_train[[6,10]] returns the output values (prices) of the 7th and 11th instances.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 21. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Again taking the query house to be third house of the test set (features_test[2]), predict the value of the query house using k-nearest neighbors with k=4 and the simple averaging method described and implemented above.
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 22. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Finally, write a function to predict the value of each and every house in a query set. (The query set can be any subset of the dataset, be it the test set or validation set.) The idea is to have a loop where we take each house in the query set as the query house and make a prediction for that specific house. The new function should take the following parameters:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls7\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the value of k;\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature matrix for the training set;\cb1 \
+\ls7\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the output values (prices) of the training houses; and\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls7\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 the feature matrix for the query set.\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The function should return a set of predicted values, one for each house in the query set.\
+e.g. in Python:\
+\pard\pardeftab720\sl360
+
+\f1\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 def predict_output(k, features_train, output_train, features_query):\
+    ...\
+    return predictions\
+\pard\pardeftab720\sl420\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Hint: to get the number of houses in the test set, use the .shape field of the feature matrix. See the {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/VAXF3GBwGyc7FectdGGSX4sp6k-uOd20fKclilvcjgmRxu4wvlzHHr6msqjNFDKVjMpljLOFQ0GrkWj_umlFeQ.t_v9E3Bcqd281JM_q-74jA.RIdxGkTtL79IfDpDms-7n07Dgm_hhzuZteOz4Ahl4V8YviIfJZs5shxuQwh6mssFEjhMqGawu_IWfrdxUqaZT5WeQ9cjOE9Oku-3tuRDz8TRhSbnq1nA4UCTYOnhI7a0yd-eRJvmfNtd9koRDzoZMtpWj_47183042LziQD9BSaTlC0AYOChfp7tXzyOPFx_6Ei5yotLpkXTN23wwFklVTWeVSdEaHnGi7jvx5fc6K3hshYTvlYZLHJbF0QksknjQNNyF0mE0TB3EYz44Q0Klnkw4s7nKtGqxSiNJ0q8IeCwGnf-bENHV6JQsjysXmm8OwuA6Y4QtHf4GJ-mRjn4Gb52Fz9tzpsJc4AhPL6VhmkH7FJguYoiL5ZdPTYolvsksYQYC7DpT5A5fueMyDyVONruM-DeFPuNyaDFTxX3xbM"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 documentation}}.\
+\pard\pardeftab720\sl420\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 23. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: Make predictions for the first 10 houses in the test set, using k=10. What is the index of the house in this query set that has the lowest predicted value? What is the predicted value of this house?
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl480\sa240
+
+\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Choosing the best value of k using a validation set\
+\pard\pardeftab720\sl420\sa280
+
+\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 24. 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 There remains a question of choosing the value of k to use in making predictions. Here, we use a validation set to choose this value. Write a loop that does the following:\
+For k in [1, 2, \'85 15]:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\sa280
+\ls8\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Make predictions for the VALIDATION data using the k-nearest neighbors from the TRAINING data.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420
+\ls8\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute the RSS on VALIDATION data\cb1 \
+\pard\pardeftab720\sl420\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Report which k produced the lowest RSS on validation data.\
+\pard\pardeftab720\sl420
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 25. 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Quiz Question: What is the RSS on the TEST data using the value of k found above? To be clear, sum over all houses in the TEST set.
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
